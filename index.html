@@ -1,44 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Character.io</title>
-    <link href="https://bootswatch.com/5/journal/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://bootswatch.com/5/journal/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <script type="module" src="./src/index.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
+    <header data-bs-theme="dark">
+      <div class="bg-dark">
+        <div class="container">
+          <h1
+            class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 text-white"
+          >
+            Character.io
+          </h1>
+          <ul
+            class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+          >
+            <li>
+              <a href="#accueil" class="nav-link px-2 text-white">Accueil</a>
+            </li>
+            <li>
+              <a href="#inventaire" class="nav-link px-2 text-white"
+                >Inventaire</a
+              >
+            </li>
+            <li>
+              <a href="#boutique" class="nav-link px-2 text-white">Boutique</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
 
-    <body>
-        <header data-bs-theme="dark">
-            <div class="bg-dark">
-                <div class="container">
-                    <h1 class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 text-white">Character.io</h1>
-                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="#/" class="nav-link px-2 text-white">Accueil</a></li>
-                        <li><a href="#/inventaire" class="nav-link px-2 text-white">Inventaire</a></li>
-                        <li><a href="#/boutique" class="nav-link px-2 text-white">Boutique</a></li>
-                      </ul>
-                </div>
-            </div>
-        </header>
+    <main>
+      <div class="py-5 bg-body-tertiary">
+        <div class="container">
+          <div id="accueil" class="section-page">Accueil</div>
+          <div id="inventaire" class="section-page">Inventaire</div>
+          <div id="boutique" class="section-page">Boutique</div>
+        </div>
+      </div>
+    </main>
 
-        <main>
-            <div class=" py-5 bg-body-tertiary">
-                <div class="container">
-                    
-                </div>
-            </div>
-        </main>
-
-        <footer class="text-body-secondary py-5">
-            <div class="container">
-                <p class="float-end mb-1"></p>
-                    <a href="#">Revenir en haut</a>
-                </p>
-            </div>
-        </footer>
-    </body>
+    <footer class="text-body-secondary py-5">
+      <div class="container">
+        <p class="float-end mb-1">
+          <a href="#">Revenir en haut</a>
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>

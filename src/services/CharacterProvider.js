@@ -6,9 +6,7 @@ export default class CharacterProvider {
       // récupèrer les tables
       const resPersos = await fetch("http://localhost:3000/characters");
       const resEquip = await fetch("http://localhost:3000/equipment");
-      const resLiaisons = await fetch(
-        "http://localhost:3000/character_equipment",
-      );
+      const resLiaisons = await fetch("http://localhost:3000/character_equipment");
 
       const charactersJson = await resPersos.json();
       const equipmentsJson = await resEquip.json();
