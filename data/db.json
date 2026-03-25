@@ -7,7 +7,7 @@
       "stats": { "force": 88, "agilite": 44, "intelligence": 32 }, 
       "description": "Guerrier légendaire des cimes, sa force physique est inégalée.", 
       "note": 4.2, 
-      "image": "assets/img/aethelgard.jpg" 
+      "image": "./src/assets/img/aethelgard.jpg" 
     },
     { 
       "id": 2, 
@@ -16,7 +16,7 @@
       "stats": { "force": 35, "agilite": 95, "intelligence": 50 }, 
       "description": "Maîtresse de l'infiltration, elle mise tout sur sa rapidité.", 
       "note": 4.8, 
-      "image": "assets/img/lyra.jpg" 
+      "image": "./src/assets/img/lyra.jpg" 
     },
     { 
       "id": 3, 
@@ -25,7 +25,7 @@
       "stats": { "force": 20, "agilite": 30, "intelligence": 98 }, 
       "description": "Savant des énergies sombres, son esprit est son arme la plus puissante.", 
       "note": 3.9, 
-      "image": "assets/img/morgath.jpg" 
+      "image": "./src/assets/img/morgath.jpg" 
     },
     { 
       "id": 4, 
@@ -34,7 +34,7 @@
       "stats": { "force": 75, "agilite": 40, "intelligence": 60 }, 
       "description": "Protecteur de l'aube, un équilibre parfait entre force et savoir.", 
       "note": 4.5, 
-      "image": "assets/img/valerius.jpg" 
+      "image": "./src/assets/img/valerius.jpg" 
     },
     { 
       "id": 5, 
@@ -43,7 +43,7 @@
       "stats": { "force": 45, "agilite": 88, "intelligence": 55 }, 
       "description": "Archère d'élite, elle ne rate jamais sa cible, même à travers les nuages.", 
       "note": 4.7, 
-      "image": "assets/img/seraphina.jpg" 
+      "image": "./src/assets/img/seraphina.jpg" 
     },
     { 
       "id": 6, 
@@ -52,7 +52,7 @@
       "stats": { "force": 98, "agilite": 15, "intelligence": 10 }, 
       "description": "Une force brute inarrêtable qui détruit tout sur son passage.", 
       "note": 3.5, 
-      "image": "assets/img/kroth.jpg" 
+      "image": "./src/assets/img/kroth.jpg" 
     },
     { 
       "id": 7, 
@@ -61,7 +61,7 @@
       "stats": { "force": 25, "agilite": 65, "intelligence": 92 }, 
       "description": "Manipulatrice de réalité capable de plier le temps à sa volonté.", 
       "note": 4.1, 
-      "image": "assets/img/xania.jpg" 
+      "image": "./src/assets/img/xania.jpg" 
     },
     { 
       "id": 8, 
@@ -70,7 +70,7 @@
       "stats": { "force": 65, "agilite": 70, "intelligence": 45 }, 
       "description": "Il commande aux créatures les plus sauvages de la forêt primaire.", 
       "note": 4.3, 
-      "image": "assets/img/thalon.jpg" 
+      "image": "./src/assets/img/thalon.jpg" 
     },
     { 
       "id": 9, 
@@ -79,7 +79,7 @@
       "stats": { "force": 40, "agilite": 60, "intelligence": 88 }, 
       "description": "Le feu coule dans ses veines, consumant ses ennemis sur place.", 
       "note": 4.6, 
-      "image": "assets/img/ignis.jpg" 
+      "image": "./src/assets/img/ignis.jpg" 
     },
     { 
       "id": 10, 
@@ -88,7 +88,7 @@
       "stats": { "force": 82, "agilite": 45, "intelligence": 65 }, 
       "description": "Ancien chevalier de la lumière ayant succombé aux murmures de l'ombre.", 
       "note": 4.0, 
-      "image": "assets/img/umbra.jpg" 
+      "image": "./src/assets/img/umbra.jpg" 
     }
   ],
 
