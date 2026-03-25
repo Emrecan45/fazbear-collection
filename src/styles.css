@@ -1,0 +1,56 @@
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.site-header {
+  background-color: #280033;
+}
+
+.site-header .nav-link,
+.site-header h1 {
+  color: #fff;
+}
+
+.card-compact {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.card-compact .card-body {
+  padding: 0.75rem;
+}
+
+.card-compact .card-title {
+  font-size: 1rem;
+}
+
+.card-compact .card-subtitle {
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+.card-compact .card-img-top.card-compact-img {
+  height: 400px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.card-compact .list-group-item {
+  background-color: #000;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.card-compact a,
+.card-compact a:hover,
+.card-compact a:focus {
+  color: #fff;
+}
+
+.card-compact .badge {
+  color: #000;
+}

@@ -1,5 +1,5 @@
 export default class Character {
-  constructor(id, name, title, stats, description, note, image) {
+  constructor(id, name, title, stats, description, note, image, rarete) {
     this.id = id;
     this.name = name;
     this.title = title;
@@ -7,6 +7,7 @@ export default class Character {
     this.description = description;
     this.note = note;
     this.image = image;
+    this.rarete = rarete;
 
     this.inventory = [];
   }

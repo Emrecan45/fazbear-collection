@@ -24,6 +24,7 @@ export default class CharacterProvider {
           item.description,
           item.note,
           item.image,
+          item.rarete,
         );
 
         const sonInventaire = [];
@@ -67,6 +68,7 @@ export default class CharacterProvider {
         c.description,
         c.note,
         c.image,
+        c.rarete,
       );
     } catch (err) {
       console.error("Erreur getCharacter :", err);

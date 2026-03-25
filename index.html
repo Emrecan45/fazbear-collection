@@ -3,22 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Character.io</title>
+    <title>Fazbear.io</title>
     <link
       href="https://bootswatch.com/5/journal/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./src/styles.css" />
     <script type="module" src="./src/index.js"></script>
   </head>
 
   <body>
     <header data-bs-theme="dark">
-      <div class="bg-dark">
+      <div class="site-header">
         <div class="container">
           <h1
             class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 text-white"
           >
-            Character.io
+            Fazbear.io
           </h1>
           <ul
             class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
@@ -27,7 +28,8 @@
               <a href="#/accueil" class="nav-link px-2 text-white">Accueil</a>
             </li>
             <li>
-              <a href="#/inventaire" class="nav-link px-2 text-white">Inventaire</a
+              <a href="#/inventaire" class="nav-link px-2 text-white"
+                >Inventaire</a
               >
             </li>
             <li>
@@ -39,7 +41,7 @@
     </header>
 
     <main>
-      <div class="py-5 bg-body-tertiary">
+      <div class="py-5">
         <div class="container">
           <div id="accueil" class="section-page"></div>
           <div id="inventaire" class="section-page"></div>

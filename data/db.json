@@ -1,119 +1,344 @@
 {
   "characters": [
-    { 
-      "id": 1, 
-      "name": "AETHELGARD", 
-      "title": "CHEVALIER DE LA MONTAGNE", 
-      "stats": { "force": 88, "agilite": 44, "intelligence": 32 }, 
-      "description": "Guerrier légendaire des cimes, sa force physique est inégalée.", 
-      "note": 4.2, 
-      "image": "./src/assets/img/aethelgard.jpg" 
+    {
+      "id": 1,
+      "name": "Blighted Springtrap",
+      "title": "Suitte Corrompue",
+      "rarete": "Légendaire",
+      "stats": { "force": 84, "agilite": 36, "intelligence": 78 },
+      "description": "Une version détériorée de Springtrap, rongée et animée par une présence malveillante.",
+      "note": 4.6,
+      "image": "./src/assets/img/BlightedSpringtrap.jpg"
     },
-    { 
-      "id": 2, 
-      "name": "LYRA OMBRE-NUIT", 
-      "title": "ASSASSIN DE L'OMBRE", 
-      "stats": { "force": 35, "agilite": 95, "intelligence": 50 }, 
-      "description": "Maîtresse de l'infiltration, elle mise tout sur sa rapidité.", 
-      "note": 4.8, 
-      "image": "./src/assets/img/lyra.jpg" 
+    {
+      "id": 2,
+      "name": "Bonnie",
+      "title": "Guitariste Animatronique",
+      "rarete": "Rare",
+      "stats": { "force": 42, "agilite": 78, "intelligence": 55 },
+      "description": "Le lapin guitariste du groupe : mystérieux le jour, agressif la nuit.",
+      "note": 4.4,
+      "image": "./src/assets/img/Bonnie.jpg"
     },
-    { 
-      "id": 3, 
-      "name": "MORGATH LE NÉANT", 
-      "title": "ARCHIMAGE", 
-      "stats": { "force": 20, "agilite": 30, "intelligence": 98 }, 
-      "description": "Savant des énergies sombres, son esprit est son arme la plus puissante.", 
-      "note": 3.9, 
-      "image": "./src/assets/img/morgath.jpg" 
+    {
+      "id": 3,
+      "name": "Chica",
+      "title": "Chanteuse / Amatrice de Pizza",
+      "rarete": "Rare",
+      "stats": { "force": 40, "agilite": 60, "intelligence": 52 },
+      "description": "Animatronique poule connue pour son amour de la nourriture et son compagnon cupcake.",
+      "note": 4.2,
+      "image": "./src/assets/img/Chica.jpg"
     },
-    { 
-      "id": 4, 
-      "name": "VALERIUS", 
-      "title": "SENTINELLE DU SOLEIL", 
-      "stats": { "force": 75, "agilite": 40, "intelligence": 60 }, 
-      "description": "Protecteur de l'aube, un équilibre parfait entre force et savoir.", 
-      "note": 4.5, 
-      "image": "./src/assets/img/valerius.jpg" 
+    {
+      "id": 4,
+      "name": "Flaming Springtrap",
+      "title": "Incarnation Enflammée",
+      "rarete": "Mythique",
+      "stats": { "force": 86, "agilite": 38, "intelligence": 72 },
+      "description": "Une variante de Springtrap perpétuellement embrasée, terrifiante et implacable.",
+      "note": 4.7,
+      "image": "./src/assets/img/FlamingSpringtrap.jpg"
     },
-    { 
-      "id": 5, 
-      "name": "SERAPHINA", 
-      "title": "RÔDEUSE DES CIEUX", 
-      "stats": { "force": 45, "agilite": 88, "intelligence": 55 }, 
-      "description": "Archère d'élite, elle ne rate jamais sa cible, même à travers les nuages.", 
-      "note": 4.7, 
-      "image": "./src/assets/img/seraphina.jpg" 
+    {
+      "id": 5,
+      "name": "Foam Bee",
+      "title": "Abeille Jouet",
+      "rarete": "Commun",
+      "stats": { "force": 28, "agilite": 86, "intelligence": 40 },
+      "description": "Petit animatronique vif et espiègle, conçu comme une attraction enfantine.",
+      "note": 3.9,
+      "image": "./src/assets/img/FoamBee.jpg"
     },
-    { 
-      "id": 6, 
-      "name": "KROTH", 
-      "title": "BRISEUR D'ACIER", 
-      "stats": { "force": 98, "agilite": 15, "intelligence": 10 }, 
-      "description": "Une force brute inarrêtable qui détruit tout sur son passage.", 
-      "note": 3.5, 
-      "image": "./src/assets/img/kroth.jpg" 
+    {
+      "id": 6,
+      "name": "Foam Sharpay",
+      "title": "Divette en Mousse",
+      "rarete": "Commun",
+      "stats": { "force": 30, "agilite": 72, "intelligence": 48 },
+      "description": "Une mascotte théâtrale, exubérante et aux réactions imprévisibles la nuit.",
+      "note": 3.8,
+      "image": "./src/assets/img/FoamSharpay.jpg"
     },
-    { 
-      "id": 7, 
-      "name": "XANIA", 
-      "title": "TISSEUSE DU VIDE", 
-      "stats": { "force": 25, "agilite": 65, "intelligence": 92 }, 
-      "description": "Manipulatrice de réalité capable de plier le temps à sa volonté.", 
-      "note": 4.1, 
-      "image": "./src/assets/img/xania.jpg" 
+    {
+      "id": 7,
+      "name": "Freddy",
+      "title": "Mascotte Principale",
+      "rarete": "Épique",
+      "stats": { "force": 70, "agilite": 50, "intelligence": 82 },
+      "description": "Le leader du groupe, calculateur et souvent associé à l'esprit d'un enfant disparu.",
+      "note": 4.6,
+      "image": "./src/assets/img/Freddy.jpg"
     },
-    { 
-      "id": 8, 
-      "name": "THALON", 
-      "title": "MAÎTRE DES BÊTES", 
-      "stats": { "force": 65, "agilite": 70, "intelligence": 45 }, 
-      "description": "Il commande aux créatures les plus sauvages de la forêt primaire.", 
-      "note": 4.3, 
-      "image": "./src/assets/img/thalon.jpg" 
+    {
+      "id": 8,
+      "name": "Frozen Freddy",
+      "title": "Édition Gelée",
+      "rarete": "Rare",
+      "stats": { "force": 68, "agilite": 44, "intelligence": 70 },
+      "description": "Une variante glacée de Freddy, figée mais dangereuse lorsqu'elle reprend vie.",
+      "note": 4.1,
+      "image": "./src/assets/img/FrozenFreddy.jpg"
     },
-    { 
-      "id": 9, 
-      "name": "IGNIS", 
-      "title": "MAGE DE FEU", 
-      "stats": { "force": 40, "agilite": 60, "intelligence": 88 }, 
-      "description": "Le feu coule dans ses veines, consumant ses ennemis sur place.", 
-      "note": 4.6, 
-      "image": "./src/assets/img/ignis.jpg" 
+    {
+      "id": 9,
+      "name": "Mangle",
+      "title": "Amalgame Démantelé",
+      "rarete": "Épique",
+      "stats": { "force": 36, "agilite": 92, "intelligence": 64 },
+      "description": "Un animatronique en pièces, reconstruit et instable, célèbre pour son apparence mutilée.",
+      "note": 4.3,
+      "image": "./src/assets/img/Mangle.jpg"
     },
-    { 
-      "id": 10, 
-      "name": "UMBRA", 
-      "title": "PALADIN NOIR", 
-      "stats": { "force": 82, "agilite": 45, "intelligence": 65 }, 
-      "description": "Ancien chevalier de la lumière ayant succombé aux murmures de l'ombre.", 
-      "note": 4.0, 
-      "image": "./src/assets/img/umbra.jpg" 
+    {
+      "id": 10,
+      "name": "OP Entity",
+      "title": "Entité Anonyme",
+      "rarete": "Mythique",
+      "stats": { "force": 58, "agilite": 48, "intelligence": 90 },
+      "description": "Une présence énigmatique et cosmique, difficile à cerner et étudiée par les fans.",
+      "note": 4.0,
+      "image": "./src/assets/img/OPEntity.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Plush Chica",
+      "title": "Peluche Amicale",
+      "rarete": "Commun",
+      "stats": { "force": 18, "agilite": 40, "intelligence": 34 },
+      "description": "Version en peluche plus douce de Chica : trompeuse par son aspect innocent.",
+      "note": 3.6,
+      "image": "./src/assets/img/PlushChica.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Plush Foxy",
+      "title": "Peluche Pirate",
+      "rarete": "Commun",
+      "stats": { "force": 34, "agilite": 66, "intelligence": 42 },
+      "description": "Une version peluche de Foxy, espiègle et parfois agressive selon la légende.",
+      "note": 3.9,
+      "image": "./src/assets/img/PlushFoxy.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Plush Freddy",
+      "title": "Peluche du Leader",
+      "rarete": "Commun",
+      "stats": { "force": 30, "agilite": 36, "intelligence": 48 },
+      "description": "Réplique en peluche de Freddy, souvent utilisée comme mascotte douce mais troublante.",
+      "note": 3.7,
+      "image": "./src/assets/img/PlushFreddy.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Plush Funtime Freddy",
+      "title": "Peluche Farceur",
+      "rarete": "Commun",
+      "stats": { "force": 34, "agilite": 58, "intelligence": 52 },
+      "description": "Une version Funtime en peluche, mélange d'innocence et de bizarrerie.",
+      "note": 3.8,
+      "image": "./src/assets/img/PlushFuntimeFreddy.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Ringmaster Foxy",
+      "title": "Maître de Cérémonie",
+      "rarete": "Épique",
+      "stats": { "force": 48, "agilite": 66, "intelligence": 60 },
+      "description": "Foxy déguisé en ringmaster, charismatique et dangereux sur scène.",
+      "note": 4.0,
+      "image": "./src/assets/img/RingmasterFoxy.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Serpent Mangle",
+      "title": "Variation Sinueuse",
+      "rarete": "Rare",
+      "stats": { "force": 38, "agilite": 88, "intelligence": 56 },
+      "description": "Une déclinaison de Mangle avec des éléments serpentins, imprévisible et rapide.",
+      "note": 4.1,
+      "image": "./src/assets/img/SerpentMangle.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Sharpay",
+      "title": "Divette Glamour",
+      "rarete": "Rare",
+      "stats": { "force": 26, "agilite": 70, "intelligence": 50 },
+      "description": "Personnage flamboyant et théâtral, conçu pour attirer l'attention.",
+      "note": 3.7,
+      "image": "./src/assets/img/Sharpay.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Spring Bonnie",
+      "title": "Prédécesseur ",
+      "rarete": "Légendaire",
+      "stats": { "force": 64, "agilite": 72, "intelligence": 60 },
+      "description": "Ancienne version liée aux origines des springlocks, mystérieuse et dangereuse.",
+      "note": 4.4,
+      "image": "./src/assets/img/SpringBonnie.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Springtrap",
+      "title": "Hôte du Passé",
+      "rarete": "Légendaire",
+      "stats": { "force": 88, "agilite": 42, "intelligence": 86 },
+      "description": "Le costume qui abrite l'un des antagonistes humains les plus sinistres.",
+      "note": 4.8,
+      "image": "./src/assets/img/Springtrap.jpg"
+    },
+    {
+      "id": 20,
+      "name": "Swing Bee",
+      "title": "Abeille Musicale",
+      "rarete": "Commun",
+      "stats": { "force": 24, "agilite": 80, "intelligence": 38 },
+      "description": "Petit personnage d'appoint, souvent utilisé dans les décors et spectacles.",
+      "note": 3.5,
+      "image": "./src/assets/img/SwingBee.jpg"
+    },
+    {
+      "id": 21,
+      "name": "Toy Bonnie",
+      "title": "Bonnie (Réédition Toy)",
+      "rarete": "Rare",
+      "stats": { "force": 44, "agilite": 82, "intelligence": 58 },
+      "description": "Version modernisée et plus lisse de Bonnie, conçue pour les enfants.",
+      "note": 4.0,
+      "image": "./src/assets/img/ToyBonnie.jpg"
+    },
+    {
+      "id": 22,
+      "name": "Withered Bonnie",
+      "title": "Bonnie Dégradé",
+      "rarete": "Rare",
+      "stats": { "force": 40, "agilite": 46, "intelligence": 50 },
+      "description": "Une version abîmée et inquiétante de Bonnie, laissée en pièces.",
+      "note": 4.1,
+      "image": "./src/assets/img/WitheredBonnie.jpg"
+    },
+    {
+      "id": 23,
+      "name": "Withered Chica",
+      "title": "Chica Endommagée",
+      "rarete": "Rare",
+      "stats": { "force": 36, "agilite": 44, "intelligence": 48 },
+      "description": "Chica en mauvais état, réputée pour son apparence inquiétante et son compagnon cupcake.",
+      "note": 4.0,
+      "image": "./src/assets/img/WitheredChica.jpg"
+    },
+    {
+      "id": 24,
+      "name": "Woodland Freddy",
+      "title": "Freddy Forestier",
+      "rarete": "Rare",
+      "stats": { "force": 66, "agilite": 46, "intelligence": 62 },
+      "description": "Une réinterprétation forestière de Freddy, plus rustique mais menaçante.",
+      "note": 4.2,
+      "image": "./src/assets/img/WoodlandFreddy.jpg"
     }
   ],
 
   "equipment": [
-    { "id": 101, "name": "Épée du Tueur de Dragon", "bonusStat": "+25 force", "rarete": "Légendaire" },
-    { "id": 102, "name": "Armure du Soleil Éternel", "bonusStat": "+40 force", "rarete": "Mythique" },
-    { "id": 103, "name": "Anneau de Flux de Mana", "bonusStat": "+15 intelligence", "rarete": "Commun" },
-    { "id": 104, "name": "Bottes de Foulée Rapide", "bonusStat": "+15 agilite", "rarete": "Commun" },
-    { "id": 105, "name": "Sceptre du Vide", "bonusStat": "+50 intelligence", "rarete": "Légendaire" },
-    { "id": 106, "name": "Dagues de l'Ombre", "bonusStat": "+20 agilite", "rarete": "Rare" },
-    { "id": 107, "name": "Bouclier Aegis", "bonusStat": "+30 force", "rarete": "Épique" },
-    { "id": 108, "name": "Orbe de Clairvoyance", "bonusStat": "+25 intelligence", "rarete": "Rare" },
-    { "id": 109, "name": "Cape du Marche-Vent", "bonusStat": "+30 agilite", "rarete": "Épique" }
+    {
+      "id": 1,
+      "name": "Mécanisme Springlock Instable",
+      "bonusStat": "+25 force",
+      "rarete": "Légendaire"
+    },
+    {
+      "id": 2,
+      "name": "Endosquelette en Titane",
+      "bonusStat": "+40 force",
+      "rarete": "Mythique"
+    },
+    {
+      "id": 3,
+      "name": "Badge du Gardien de Nuit",
+      "bonusStat": "+15 intelligence",
+      "rarete": "Commun"
+    },
+    {
+      "id": 4,
+      "name": "Servomoteurs Révisés",
+      "bonusStat": "+15 agilite",
+      "rarete": "Commun"
+    },
+    {
+      "id": 5,
+      "name": "Disque d'Illusion Sonore",
+      "bonusStat": "+50 intelligence",
+      "rarete": "Légendaire"
+    },
+    {
+      "id": 6,
+      "name": "Guitare Électrique Surchargée",
+      "bonusStat": "+20 agilite",
+      "rarete": "Rare"
+    },
+    {
+      "id": 7,
+      "name": "Costume Ignifugé",
+      "bonusStat": "+30 force",
+      "rarete": "Épique"
+    },
+    {
+      "id": 8,
+      "name": "Module de Reconnaissance Faciale",
+      "bonusStat": "+25 intelligence",
+      "rarete": "Rare"
+    },
+    {
+      "id": 9,
+      "name": "Boîte à Musique de la Marionnette",
+      "bonusStat": "+30 agilite",
+      "rarete": "Épique"
+    }
   ],
 
   "character_equipment": [
-    { "id": 1, "characterId": 1, "equipmentId": 101 },
-    { "id": 2, "characterId": 1, "equipmentId": 102 },
-    { "id": 3, "characterId": 2, "equipmentId": 106 },
-    { "id": 4, "characterId": 2, "equipmentId": 104 },
-    { "id": 5, "characterId": 3, "equipmentId": 105 },
-    { "id": 6, "characterId": 4, "equipmentId": 107 },
-    { "id": 7, "characterId": 5, "equipmentId": 104 },
-    { "id": 8, "characterId": 5, "equipmentId": 109 },
-    { "id": 9, "characterId": 7, "equipmentId": 108 },
-    { "id": 10, "characterId": 9, "equipmentId": 108 }
+    { "id": 1, "characterId": 1, "equipmentId": 1 },
+    { "id": 2, "characterId": 1, "equipmentId": 2 },
+    { "id": 3, "characterId": 2, "equipmentId": 6 },
+    { "id": 4, "characterId": 2, "equipmentId": 4 },
+    { "id": 5, "characterId": 3, "equipmentId": 5 },
+    { "id": 6, "characterId": 4, "equipmentId": 7 },
+    { "id": 7, "characterId": 5, "equipmentId": 1 },
+    { "id": 8, "characterId": 5, "equipmentId": 9 },
+    { "id": 9, "characterId": 6, "equipmentId": 9 },
+    { "id": 10, "characterId": 6, "equipmentId": 3 },
+    { "id": 11, "characterId": 7, "equipmentId": 8 },
+    { "id": 12, "characterId": 8, "equipmentId": 2 },
+    { "id": 13, "characterId": 8, "equipmentId": 8 },
+    { "id": 14, "characterId": 9, "equipmentId": 8 },
+    { "id": 15, "characterId": 9, "equipmentId": 4 },
+    { "id": 16, "characterId": 10, "equipmentId": 5 },
+    { "id": 17, "characterId": 10, "equipmentId": 3 },
+    { "id": 18, "characterId": 11, "equipmentId": 4 },
+    { "id": 19, "characterId": 12, "equipmentId": 4 },
+    { "id": 20, "characterId": 12, "equipmentId": 6 },
+    { "id": 21, "characterId": 13, "equipmentId": 3 },
+    { "id": 22, "characterId": 14, "equipmentId": 8 },
+    { "id": 23, "characterId": 15, "equipmentId": 9 },
+    { "id": 24, "characterId": 15, "equipmentId": 6 },
+    { "id": 25, "characterId": 16, "equipmentId": 4 },
+    { "id": 26, "characterId": 16, "equipmentId": 9 },
+    { "id": 27, "characterId": 17, "equipmentId": 9 },
+    { "id": 28, "characterId": 18, "equipmentId": 1 },
+    { "id": 29, "characterId": 19, "equipmentId": 1 },
+    { "id": 30, "characterId": 19, "equipmentId": 2 },
+    { "id": 31, "characterId": 20, "equipmentId": 4 },
+    { "id": 32, "characterId": 20, "equipmentId": 9 },
+    { "id": 33, "characterId": 21, "equipmentId": 6 },
+    { "id": 34, "characterId": 21, "equipmentId": 8 },
+    { "id": 35, "characterId": 22, "equipmentId": 4 },
+    { "id": 36, "characterId": 22, "equipmentId": 1 },
+    { "id": 37, "characterId": 23, "equipmentId": 5 },
+    { "id": 38, "characterId": 23, "equipmentId": 1 },
+    { "id": 39, "characterId": 24, "equipmentId": 7 },
+    { "id": 40, "characterId": 24, "equipmentId": 8 }
   ]
 }
