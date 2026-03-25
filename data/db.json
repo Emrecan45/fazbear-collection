@@ -7,7 +7,7 @@
       "rarete": "Légendaire",
       "stats": { "force": 84, "agilite": 36, "intelligence": 78 },
       "description": "Une version détériorée de Springtrap, rongée et animée par une présence malveillante.",
-      "note": 4.6,
+      "note": 0.0,
       "image": "./src/assets/img/BlightedSpringtrap.jpg"
     },
     {
@@ -17,7 +17,7 @@
       "rarete": "Rare",
       "stats": { "force": 42, "agilite": 78, "intelligence": 55 },
       "description": "Le lapin guitariste du groupe : mystérieux le jour, agressif la nuit.",
-      "note": 4.4,
+      "note": 0.0,
       "image": "./src/assets/img/Bonnie.jpg"
     },
     {
@@ -27,7 +27,7 @@
       "rarete": "Rare",
       "stats": { "force": 40, "agilite": 60, "intelligence": 52 },
       "description": "Animatronique poule connue pour son amour de la nourriture et son compagnon cupcake.",
-      "note": 4.2,
+      "note": 0.0,
       "image": "./src/assets/img/Chica.jpg"
     },
     {
@@ -37,7 +37,7 @@
       "rarete": "Mythique",
       "stats": { "force": 86, "agilite": 38, "intelligence": 72 },
       "description": "Une variante de Springtrap perpétuellement embrasée, terrifiante et implacable.",
-      "note": 4.7,
+      "note": 0.0,
       "image": "./src/assets/img/FlamingSpringtrap.jpg"
     },
     {
@@ -47,7 +47,7 @@
       "rarete": "Commun",
       "stats": { "force": 28, "agilite": 86, "intelligence": 40 },
       "description": "Petit animatronique vif et espiègle, conçu comme une attraction enfantine.",
-      "note": 3.9,
+      "note": 0.0,
       "image": "./src/assets/img/FoamBee.jpg"
     },
     {
@@ -57,27 +57,27 @@
       "rarete": "Commun",
       "stats": { "force": 30, "agilite": 72, "intelligence": 48 },
       "description": "Une mascotte théâtrale, exubérante et aux réactions imprévisibles la nuit.",
-      "note": 3.8,
+      "note": 0.0,
       "image": "./src/assets/img/FoamSharpay.jpg"
     },
     {
       "id": 7,
       "name": "Freddy",
       "title": "Mascotte Principale",
-      "rarete": "Épique",
+      "rarete": "Rare",
       "stats": { "force": 70, "agilite": 50, "intelligence": 82 },
       "description": "Le leader du groupe, calculateur et souvent associé à l'esprit d'un enfant disparu.",
-      "note": 4.6,
+      "note": 0.0,
       "image": "./src/assets/img/Freddy.jpg"
     },
     {
       "id": 8,
       "name": "Frozen Freddy",
       "title": "Édition Gelée",
-      "rarete": "Rare",
+      "rarete": "Épique",
       "stats": { "force": 68, "agilite": 44, "intelligence": 70 },
       "description": "Une variante glacée de Freddy, figée mais dangereuse lorsqu'elle reprend vie.",
-      "note": 4.1,
+      "note": 0.0,
       "image": "./src/assets/img/FrozenFreddy.jpg"
     },
     {
@@ -87,7 +87,7 @@
       "rarete": "Épique",
       "stats": { "force": 36, "agilite": 92, "intelligence": 64 },
       "description": "Un animatronique en pièces, reconstruit et instable, célèbre pour son apparence mutilée.",
-      "note": 4.3,
+      "note": 0.0,
       "image": "./src/assets/img/Mangle.jpg"
     },
     {
@@ -97,7 +97,7 @@
       "rarete": "Mythique",
       "stats": { "force": 58, "agilite": 48, "intelligence": 90 },
       "description": "Une présence énigmatique et cosmique, difficile à cerner et étudiée par les fans.",
-      "note": 4.0,
+      "note": 0.0,
       "image": "./src/assets/img/OPEntity.jpg"
     },
     {
@@ -107,7 +107,7 @@
       "rarete": "Commun",
       "stats": { "force": 18, "agilite": 40, "intelligence": 34 },
       "description": "Version en peluche plus douce de Chica : trompeuse par son aspect innocent.",
-      "note": 3.6,
+      "note": 0.0,
       "image": "./src/assets/img/PlushChica.jpg"
     },
     {
@@ -117,7 +117,7 @@
       "rarete": "Commun",
       "stats": { "force": 34, "agilite": 66, "intelligence": 42 },
       "description": "Une version peluche de Foxy, espiègle et parfois agressive selon la légende.",
-      "note": 3.9,
+      "note": 0.0,
       "image": "./src/assets/img/PlushFoxy.jpg"
     },
     {
@@ -127,7 +127,7 @@
       "rarete": "Commun",
       "stats": { "force": 30, "agilite": 36, "intelligence": 48 },
       "description": "Réplique en peluche de Freddy, souvent utilisée comme mascotte douce mais troublante.",
-      "note": 3.7,
+      "note": 0.0,
       "image": "./src/assets/img/PlushFreddy.jpg"
     },
     {
@@ -137,7 +137,7 @@
       "rarete": "Commun",
       "stats": { "force": 34, "agilite": 58, "intelligence": 52 },
       "description": "Une version Funtime en peluche, mélange d'innocence et de bizarrerie.",
-      "note": 3.8,
+      "note": 0.0,
       "image": "./src/assets/img/PlushFuntimeFreddy.jpg"
     },
     {
@@ -147,7 +147,7 @@
       "rarete": "Épique",
       "stats": { "force": 48, "agilite": 66, "intelligence": 60 },
       "description": "Foxy déguisé en ringmaster, charismatique et dangereux sur scène.",
-      "note": 4.0,
+      "note": 0.0,
       "image": "./src/assets/img/RingmasterFoxy.jpg"
     },
     {
@@ -157,7 +157,7 @@
       "rarete": "Rare",
       "stats": { "force": 38, "agilite": 88, "intelligence": 56 },
       "description": "Une déclinaison de Mangle avec des éléments serpentins, imprévisible et rapide.",
-      "note": 4.1,
+      "note": 0.0,
       "image": "./src/assets/img/SerpentMangle.jpg"
     },
     {
@@ -167,7 +167,7 @@
       "rarete": "Rare",
       "stats": { "force": 26, "agilite": 70, "intelligence": 50 },
       "description": "Personnage flamboyant et théâtral, conçu pour attirer l'attention.",
-      "note": 3.7,
+      "note": 0.0,
       "image": "./src/assets/img/Sharpay.jpg"
     },
     {
@@ -177,7 +177,7 @@
       "rarete": "Légendaire",
       "stats": { "force": 64, "agilite": 72, "intelligence": 60 },
       "description": "Ancienne version liée aux origines des springlocks, mystérieuse et dangereuse.",
-      "note": 4.4,
+      "note": 0.0,
       "image": "./src/assets/img/SpringBonnie.jpg"
     },
     {
@@ -187,7 +187,7 @@
       "rarete": "Légendaire",
       "stats": { "force": 88, "agilite": 42, "intelligence": 86 },
       "description": "Le costume qui abrite l'un des antagonistes humains les plus sinistres.",
-      "note": 4.8,
+      "note": 0.0,
       "image": "./src/assets/img/Springtrap.jpg"
     },
     {
@@ -197,7 +197,7 @@
       "rarete": "Commun",
       "stats": { "force": 24, "agilite": 80, "intelligence": 38 },
       "description": "Petit personnage d'appoint, souvent utilisé dans les décors et spectacles.",
-      "note": 3.5,
+      "note": 0.0,
       "image": "./src/assets/img/SwingBee.jpg"
     },
     {
@@ -207,7 +207,7 @@
       "rarete": "Rare",
       "stats": { "force": 44, "agilite": 82, "intelligence": 58 },
       "description": "Version modernisée et plus lisse de Bonnie, conçue pour les enfants.",
-      "note": 4.0,
+      "note": 0.0,
       "image": "./src/assets/img/ToyBonnie.jpg"
     },
     {
@@ -217,7 +217,7 @@
       "rarete": "Rare",
       "stats": { "force": 40, "agilite": 46, "intelligence": 50 },
       "description": "Une version abîmée et inquiétante de Bonnie, laissée en pièces.",
-      "note": 4.1,
+      "note": 0.0,
       "image": "./src/assets/img/WitheredBonnie.jpg"
     },
     {
@@ -227,17 +227,17 @@
       "rarete": "Rare",
       "stats": { "force": 36, "agilite": 44, "intelligence": 48 },
       "description": "Chica en mauvais état, réputée pour son apparence inquiétante et son compagnon cupcake.",
-      "note": 4.0,
+      "note": 0.0,
       "image": "./src/assets/img/WitheredChica.jpg"
     },
     {
       "id": 24,
       "name": "Woodland Freddy",
       "title": "Freddy Forestier",
-      "rarete": "Rare",
+      "rarete": "Épique",
       "stats": { "force": 66, "agilite": 46, "intelligence": 62 },
       "description": "Une réinterprétation forestière de Freddy, plus rustique mais menaçante.",
-      "note": 4.2,
+      "note": 0.0,
       "image": "./src/assets/img/WoodlandFreddy.jpg"
     }
   ],

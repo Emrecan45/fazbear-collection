@@ -1,7 +1,62 @@
 import Character from "../models/Character.js";
 
 export default class CharacterProvider {
-  static fetchCharacters = async () => {
+  static filterCharacters(personnages, criteres) {
+    let resultats = [];
+
+    for (let i = 0; i < personnages.length; i++) {
+      let p = personnages[i];
+      let correspond = true;
+
+      if (criteres.search !== "") {
+        let nomMin = p.name.toLowerCase();
+        let searchMin = criteres.search.toLowerCase();
+        if (nomMin.indexOf(searchMin) === -1) {
+          correspond = false;
+        }
+      }
+
+      if (criteres.rarete !== "" && p.rarete !== criteres.rarete) {
+        correspond = false;
+      }
+
+      if (criteres.note !== "" && p.note < parseInt(criteres.note)) {
+        correspond = false;
+      }
+
+      if (criteres.favoris === true) {
+        let estDansFavoris = false;
+        for (let j = 0; j < criteres.favorisList.length; j++) {
+          if (criteres.favorisList[j] === p.id) {
+            estDansFavoris = true;
+            break;
+          }
+        }
+        if (estDansFavoris === false) {
+          correspond = false;
+        }
+      }
+
+      if (correspond === true) {
+        resultats.push(p);
+      }
+    }
+    return resultats;
+  }
+
+  static saveFilters(filters) {
+    localStorage.setItem("characterFilters", JSON.stringify(filters));
+  }
+
+  static loadFilters() {
+    let str = localStorage.getItem("characterFilters");
+    if (str !== null) {
+      return JSON.parse(str);
+    }
+    return { search: "", rarete: "", note: "", favoris: false, favorisList: [] };
+  }
+
+  static async fetchCharacters() {
     try {
       // récupèrer les tables
       const resPersos = await fetch("http://localhost:3000/characters");
@@ -56,7 +111,7 @@ export default class CharacterProvider {
     }
   };
 
-  static getCharacter = async (id) => {
+  static async getCharacter(id) {
     try {
       const response = await fetch(`http://localhost:3000/characters/${id}`);
       const c = await response.json();

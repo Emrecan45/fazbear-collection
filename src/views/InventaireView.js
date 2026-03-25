@@ -1,12 +1,9 @@
 import CharacterProvider from "../services/CharacterProvider.js";
-import CharactersView from "./CharactersView.js";
+import CharactersList from "../components/CharactersList.js";
 
 export default class InventaireView {
   static async render() {
     let section = document.getElementById("inventaire");
-    section.innerHTML = "<h1 class='text-center my-4'>Inventaire</h1>";
-    section.innerHTML += "<p>Chargement de votre inventaire...</p>";
-
     const tousLesPersonnages = await CharacterProvider.fetchCharacters();
 
     let idsSauvegardes = [];
@@ -17,8 +14,7 @@ export default class InventaireView {
     }
 
     if (idsSauvegardes.length === 0) {
-      section.innerHTML = "<h1 class='text-center my-4'>Inventaire</h1>";
-      section.innerHTML += "<p>Votre inventaire est vide.</p>";
+      section.innerHTML = "<h1 class='text-center my-4'>Inventaire</h1><p class='text-center'>Votre inventaire est vide.</p>";
       return;
     }
 
@@ -37,6 +33,6 @@ export default class InventaireView {
       }
     }
     section.innerHTML = "<h1 class='text-center my-4'>Inventaire</h1>";
-    section.innerHTML += CharactersView.getHtml(personnagesDuJoueur);
+    section.innerHTML += CharactersList.getHtml(personnagesDuJoueur);
   }
 }
