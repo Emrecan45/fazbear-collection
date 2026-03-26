@@ -20,7 +20,7 @@ export default class CharacterProvider {
         correspond = false;
       }
 
-      if (criteres.note !== "" && p.note < parseInt(criteres.note)) {
+      if (criteres.note !== "" && (parseInt(p.note) || 0) !== parseInt(criteres.note)) {
         correspond = false;
       }
 
@@ -108,7 +108,10 @@ export default class CharacterProvider {
         if (notesStr) {
           notesPerso = JSON.parse(notesStr);
         }
-        perso.note = notesPerso[perso.id];
+        
+        if (notesPerso[perso.id]) {
+          perso.note = notesPerso[perso.id];
+        }
 
         listePersonnagesComplets.push(perso);
       }
