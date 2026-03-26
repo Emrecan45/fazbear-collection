@@ -1,6 +1,4 @@
 export default class Pagination {
-  
-  // 1. La méthode qui dessine le HTML (comme on a fait)
   static render(page, totalPages) {
     let html = '<div class="d-flex justify-content-center align-items-center mt-4 mb-4">';
       if (page > 1) {
