@@ -20,11 +20,14 @@ export default class CharacterCard {
     let note = character.note;
     let badgeColor = this.getBadgeColor(character.rarete);
 
-    for (let j = 1; j <= 5; j++) {
-      if (j <= note) {
-        stars += "<span>★</span>";
-      } else {
-        stars += "<span>☆</span>";
+    // Afficher les étoiles seulement si l'utilisateur a déjà donné une note au perso
+    if (typeof note !== "undefined" && note > 0) {
+      for (let j = 1; j <= 5; j++) {
+        if (j <= note) {
+          stars += "<span>★</span>";
+        } else {
+          stars += "<span>☆</span>";
+        }
       }
     }
 

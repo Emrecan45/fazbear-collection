@@ -101,6 +101,15 @@ export default class CharacterProvider {
         }
 
         perso.assignEquipment(sonInventaire);
+
+        // Appliquer notes utilisateur depuis le localStorage
+        let notesPerso = {};
+        const notesStr = localStorage.getItem("notesPersonnages");
+        if (notesStr) {
+          notesPerso = JSON.parse(notesStr);
+        }
+        perso.note = notesPerso[perso.id];
+
         listePersonnagesComplets.push(perso);
       }
 

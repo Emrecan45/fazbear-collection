@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚔️ Character.io ⚔️
+# ⚔️ Fazbear.io ⚔️
 
 </div>
 
@@ -21,4 +21,13 @@ Cette application est une **Single Page Application (SPA)** développée en Java
 2. **Lancer le serveur de données** (nécessite `json-server`) :
     ```bash
     npx json-server data/db.json --port 3000
+    ```
+3. **Lancer le site** :
+    ```bash
+    npx serve
+    ```
+    
+    Si le port 3000 est deja utilisé :
+    ```bash
+    npx kill-port 3000
     ```
