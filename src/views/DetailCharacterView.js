@@ -89,6 +89,15 @@ export default class DetailCharacterView {
           <h5 class="text-muted">${character.title}</h5>
           <p id="character-description">${character.description}</p>
 
+          <div class="mb-3">
+            <h6>Stats</h6>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item small">Force : ${character.stats.force}</li>
+              <li class="list-group-item small">Agilité : ${character.stats.agilite}</li>
+              <li class="list-group-item small">Intelligence : ${character.stats.intelligence}</li>
+            </ul>
+          </div>
+
           <div class="d-flex align-items-center gap-3 mb-3">
             <div id="stars-container">${genererEtoiles(noteActuelle)}</div>
             <button id="favori-btn" class="btn ${classeBoutonFavori}">

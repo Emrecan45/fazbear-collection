@@ -17,6 +17,20 @@ const Utils = {
   sleep: (ms) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
   },
+
+  
+  calculerTotalPages: function(nombreElements, itemsParPage) {
+    let total = parseInt(nombreElements / itemsParPage);
+    if (nombreElements % itemsParPage !== 0) {
+      total = total + 1;
+    }
+    if (total === 0) {
+      total = 1;
+    }
+    return total;
+  },
+
+
 };
 
 export default Utils;

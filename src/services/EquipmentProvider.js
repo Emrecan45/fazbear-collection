@@ -24,4 +24,44 @@ export default class EquipmentProvider {
       return [];
     }
   }
+
+  static filterEquipments(equipements, criteres) {
+    let resultats = [];
+
+    for (let i = 0; i < equipements.length; i++) {
+      let e = equipements[i];
+      let correspond = true;
+
+      if (criteres.search !== "") {
+        let nomMin = (e.name || "").toLowerCase();
+        let searchMin = criteres.search.toLowerCase();
+        if (nomMin.indexOf(searchMin) === -1) {
+          correspond = false;
+        }
+      }
+
+      if (criteres.rarete !== "") {
+        let rareteEq = (e.rarete || "").toLowerCase();
+        if (rareteEq !== criteres.rarete.toLowerCase()) {
+          correspond = false;
+        }
+      }
+
+      // Filtrer par type de bonus si la valeur note est utilisée pour les équipements
+      if (criteres.note !== "") {
+        let wanted = criteres.note.toLowerCase();
+        let bonusTxt = (e.bonusStat || "").toLowerCase();
+        if (bonusTxt.indexOf(wanted) === -1) {
+          correspond = false;
+        }
+      }
+
+      if (correspond === true) {
+        resultats.push(e);
+      }
+    }
+
+    return resultats;
+  }
+
 }

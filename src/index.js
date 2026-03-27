@@ -3,6 +3,7 @@ import AccueilView from "./views/AccueilView.js";
 import InventaireView from "./views/InventaireView.js";
 import BoutiqueView from "./views/BoutiqueView.js";
 import DetailCharacterView from "./views/DetailCharacterView.js";
+import CatalogueView from "./views/CatalogueView.js";
 
 function cacherToutesLesSections() {
   let sections = document.querySelectorAll(".section-page");
@@ -16,14 +17,19 @@ async function router() {
   // On cache tout avant d'afficher la bonne page
   cacherToutesLesSections();
 
-  if (
-    request.resource === "accueil" ||
-    request.resource === "" ||
-    !request.resource
-  ) {
+  if (request.resource === "accueil" || request.resource === "" || request.resource === "/") {
     document.getElementById("accueil").style.display = "block";
     await AccueilView.render();
-  } else if (request.resource === "inventaire") {
+  } 
+  else if (request.resource === "personnages") {
+    document.getElementById("catalogue").style.display = "block";
+    await CatalogueView.render('personnages'); 
+  }
+  else if (request.resource === "equipements") {
+    document.getElementById("catalogue").style.display = "block";
+    await CatalogueView.render('equipements');
+  } 
+  else if (request.resource === "inventaire") {
     document.getElementById("inventaire").style.display = "block";
     await InventaireView.render();
   } else if (request.resource === "boutique") {

@@ -1,14 +1,8 @@
-import CharacterProvider from "../services/CharacterProvider.js";
-import CharactersView from "./CharactersView.js";
+import Utils from "../services/Utils.js";
 
 export default class AccueilView {
   static async render() {
     let section = document.getElementById("accueil");
-    section.innerHTML = "<p>Chargement en cours...</p>";
-
-    const personnages = await CharacterProvider.fetchCharacters();
-    section.innerHTML =
-      "<h1 class='text-center my-4'>Liste des personnages</h1>";
-    section.innerHTML += CharactersView.getHtml(personnages);
+    section.innerHTML = "<h1 class='text-center text-white my-4'>Bienvenue sur Fazbear.io !</h1>"
   }
 }

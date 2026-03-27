@@ -1,3 +1,6 @@
+.pagination-invisible {
+  visibility: hidden;
+}
 body {
   background-color: #000;
   color: #fff;
@@ -28,7 +31,6 @@ body {
 
 .card-compact .card-subtitle {
   font-size: 0.85rem;
-  color: #ddd;
 }
 
 .card-compact .card-img-top.card-compact-img {
@@ -45,12 +47,38 @@ body {
   font-size: 0.9rem;
 }
 
-.card-compact a,
-.card-compact a:hover,
-.card-compact a:focus {
-  color: #fff;
+.card-compact a.btn-outline-light:hover {
+  background-color: #fff;
+  color: #000;
 }
 
 .card-compact .badge {
   color: #000;
+}
+
+.form-control.form-card,
+.form-select.form-card {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.form-control.form-card:focus,
+.form-select.form-card:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.form-card::placeholder {
+  color: gray;
+  opacity: 1;
+}
+
+.form-check-input.form-card-checkbox {
+  background-color: #000;
+  box-shadow: none;
+  border: 1px solid #fff;
+  width: 22px;
+  height: 22px;
+  margin-top: 0.15rem;
 }
