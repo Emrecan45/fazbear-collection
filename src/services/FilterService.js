@@ -5,20 +5,16 @@ export default class FilterService {
     if (mode) modeVue = mode;
 
     FilterService.setFilters({ search: "", rarete: "", note: "", favoris: false, favorisList: [] });
-    function update() {
-      onChange();
-    }
-
-    document.getElementById("searchInput").oninput = update;
-    document.getElementById("rareteFilter").onchange = update;
-    document.getElementById("noteFilter").onchange = update;
-    document.getElementById("favorisFilter").onchange = update;
+    document.getElementById("searchInput").oninput = onChange;
+    document.getElementById("rareteFilter").onchange = onChange;
+    document.getElementById("noteFilter").onchange = onChange;
+    document.getElementById("favorisFilter").onchange = onChange;
 
     let resetBtn = document.getElementById("resetFiltersBtn");
     if (resetBtn) {
       resetBtn.onclick = function() {
         FilterService.setFilters({ search: "", rarete: "", note: "", favoris: false, favorisList: [] });
-        update();
+        onChange();
       };
     }
   }
