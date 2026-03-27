@@ -6,8 +6,29 @@ body {
   color: #fff;
 }
 
+.boutique {
+  background-image: url("./assets/img/Store.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.accueil {
+  background-image: url("./assets/img/Accueil.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .site-header {
   background-color: #280033;
+  height: 150px;
+}
+
+.logo {
+  height: 80px;
 }
 
 .site-header .nav-link,

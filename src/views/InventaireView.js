@@ -14,7 +14,8 @@ export default class InventaireView {
     }
 
     if (idsSauvegardes.length === 0) {
-      section.innerHTML = "<h1 class='text-center my-4'>Inventaire</h1><p class='text-center'>Votre inventaire est vide.</p>";
+      section.innerHTML = "<h1 class='text-center my-4'>Inventaire</h1><p class='text-center'>Votre inventaire est vide, allez visiter la boutique !</p>";
+      section.innerHTML += "<img src='src/assets/img/Inventaire.png' alt='Inventaire vide' style='height: 450px; display: block; margin: 0 auto;'>";
       return;
     }
 

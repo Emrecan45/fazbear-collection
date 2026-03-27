@@ -16,9 +16,11 @@ async function router() {
   const request = Utils.parseRequestURL();
   // On cache tout avant d'afficher la bonne page
   cacherToutesLesSections();
+  document.body.classList.remove('boutique', 'accueil');
 
   if (request.resource === "accueil" || request.resource === "" || request.resource === "/") {
     document.getElementById("accueil").style.display = "block";
+    document.body.classList.add('accueil');
     await AccueilView.render();
   } 
   else if (request.resource === "personnages") {
@@ -34,6 +36,7 @@ async function router() {
     await InventaireView.render();
   } else if (request.resource === "boutique") {
     document.getElementById("boutique").style.display = "block";
+    document.body.classList.add('boutique');
     await BoutiqueView.render();
   } else if (request.resource === "personnage") {
     await DetailCharacterView.render(request.id);
