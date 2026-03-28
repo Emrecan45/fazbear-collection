@@ -12,7 +12,7 @@ export default class CharactersList {
 
     for (let i = startIndex; i < endIndex; i++) {
       if (i < characters.length) {
-        html += CharacterCard.getHtml(characters[i]);
+        html += CharacterCard.getHtml(characters[i], true);
       }
     }
 

@@ -27,7 +27,7 @@ export default class CharacterProvider {
       if (criteres.favoris === true) {
         let estDansFavoris = false;
         for (let j = 0; j < criteres.favorisList.length; j++) {
-          if (criteres.favorisList[j] === p.id) {
+          if (criteres.favorisList[j] == p.id) { 
             estDansFavoris = true;
             break;
           }

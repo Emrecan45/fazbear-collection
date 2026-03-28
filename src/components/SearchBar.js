@@ -1,7 +1,7 @@
 export default class SearchBar {
   static getHtml() {
     return `
-      <div class="row mb-4 justify-content-center align-items-center">
+      <div class="row mb-4 justify-content-center align-items-center gx-3">
         <div class="col-auto mb-2">
           <input type="text" id="searchInput" class="form-control form-card" placeholder="Rechercher par nom...">
         </div>
