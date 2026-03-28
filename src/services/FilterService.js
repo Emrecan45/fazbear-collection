@@ -1,3 +1,5 @@
+import FavoritesService from "./FavoritesService.js";
+
 let modeVue = 'characters';
 
 export default class FilterService {
@@ -29,7 +31,11 @@ export default class FilterService {
     const note = document.getElementById("noteFilter").value;
     const favoris = document.getElementById("favorisFilter").checked;
 
-    const favorisList = JSON.parse(localStorage.getItem("favorisPersonnages")) || []; // Recuperer la liste des favoris depuis le localStorage ou alor un tableau vide si elle n'existe pas
+    let favorisType = 'characters';
+    if (modeVue === 'equipements') {
+      favorisType = 'equipments';
+    }
+    const favorisList = FavoritesService.getFavorites(favorisType); // Recuperer la liste des favoris via FavoritesService
 
     return { search: search, rarete: rarete, note: note, favoris: favoris, favorisList: favorisList };
   }

@@ -56,6 +56,20 @@ export default class EquipmentProvider {
         }
       }
 
+      // Filtrer par favoris si demandé
+      if (criteres.favoris === true) {
+        let estDansFavoris = false;
+        for (let j = 0; j < criteres.favorisList.length; j++) {
+          if (criteres.favorisList[j] == e.id) {
+            estDansFavoris = true;
+            break;
+          }
+        }
+        if (estDansFavoris === false) {
+          correspond = false;
+        }
+      }
+
       if (correspond === true) {
         resultats.push(e);
       }

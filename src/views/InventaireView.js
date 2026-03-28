@@ -7,7 +7,7 @@ import SearchBar from "../components/SearchBar.js";
 import FilterService from "../services/FilterService.js";
 import Utils from "../services/Utils.js";
 import NavigationOnglet from "../components/NavigationOnglet.js";
-import CharacterCard from "../components/CharacterCard.js";
+import FavoriteButton from "../components/FavoriteButton.js";
 
 export default class InventaireView {
   static async render() {
@@ -65,13 +65,14 @@ export default class InventaireView {
         document.getElementById("characters-list").innerHTML = CharactersList.getHtml(personnagesFiltres, page, itemsParPage);
         document.getElementById("pagination").innerHTML = Pagination.render(page, totalPages);
         
-        CharacterCard.gererFavoris();
+        FavoriteButton.gererFavoris();
 
       } else {
         let equipementsFiltres = EquipmentProvider.filterEquipments(equipementsDuJoueur, filtres);
         let totalPages = Utils.calculerTotalPages(equipementsFiltres.length, itemsParPage);
         document.getElementById("characters-list").innerHTML = EquipmentList.getHtml(equipementsFiltres, page, itemsParPage);
         document.getElementById("pagination").innerHTML = Pagination.render(page, totalPages);
+        FavoriteButton.gererFavoris();
       }
 
       Pagination.gererClics(function(pageCible) {

@@ -1,4 +1,5 @@
 import RarityBadge from "./RarityBadge.js";
+import FavoriteButton from "./FavoriteButton.js";
 
 export default class CharacterCard {
 
@@ -20,33 +21,10 @@ export default class CharacterCard {
       // mettre le coeur de favoris seulement si boutonFavori est true
       let coeurHtml = "";
       if (boutonFavori === true) {
-        // Récupération des favoris du localStorage
-        let favorisStr = localStorage.getItem("favorisPersonnages");
-        let favoris = [];
-      if (favorisStr !== null) {
-        favoris = JSON.parse(favorisStr);
+        // style pour positionner le coeur en haut à droite de la card
+        const style = "position: absolute; top: 4px; right: 13px;"; 
+        coeurHtml = FavoriteButton.getHtml(character.id, 'characters', style);
       }
-
-      // Vérification si le personnage est dans les favoris
-      let estFavori = false;
-      for (let i = 0; i < favoris.length; i++) {
-        if (favoris[i] == character.id) {
-          estFavori = true;
-          break;
-        }
-      }
-
-      // classes et couleur pour le coeur de favori
-      let coeurClass = "bi-heart";
-      let coeurColor = "#6c757d";
-      
-      if (estFavori === true) {
-        coeurClass = "bi-heart-fill";
-        coeurColor = "#dc3545";
-      }
-
-      coeurHtml = `<i class="bi ${coeurClass} position-absolute btn-favori" data-id="${character.id}" style="top: 10px; right: 15px; font-size: 1.5rem; cursor: pointer; color: ${coeurColor};"></i>`;
-    }
 
     return `
       <div class="col-md-4 mb-4">
@@ -70,57 +48,5 @@ export default class CharacterCard {
         </div>
       </div>
     `;
-  }
-
-  static gererFavoris() {
-    let boutons = document.querySelectorAll(".btn-favori");
-    
-    for (let k = 0; k < boutons.length; k++) {
-      boutons[k].onclick = function() {
-        
-        // recuperer l'id du personnage à partir du data-id du bouton cliqué
-        let idString = this.getAttribute("data-id");
-        let id = parseInt(idString);
-        
-        let favorisStr = localStorage.getItem("favorisPersonnages");
-        let favoris = [];
-        if (favorisStr !== null) {
-          favoris = JSON.parse(favorisStr);
-        }
-
-        let possede = false;
-        for (let i = 0; i < favoris.length; i++) {
-          if (favoris[i] == id) {
-            possede = true;
-            break;
-          }
-        }
-
-        if (possede === true) {
-          let nouveauTableau = [];
-          for (let i = 0; i < favoris.length; i++) {
-            if (favoris[i] != id) {
-              nouveauTableau.push(favoris[i]);
-            }
-          }
-          favoris = nouveauTableau;
-
-          // icone du coeur coeur vide
-          this.classList.remove("bi-heart-fill");
-          this.classList.add("bi-heart");
-          this.style.color = "#6c757d"; 
-          
-        } else {
-          // mettre le personnage dans les favoris
-          favoris.push(id);
-          // changer l'icone du coeur vers coeur rouge rempli
-          this.classList.remove("bi-heart");
-          this.classList.add("bi-heart-fill");
-          this.style.color = "#dc3545"; 
-        }
-
-        localStorage.setItem("favorisPersonnages", JSON.stringify(favoris));
-      };
-    }
   }
 }
