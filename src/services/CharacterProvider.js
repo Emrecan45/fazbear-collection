@@ -44,18 +44,12 @@ export default class CharacterProvider {
     return resultats;
   }
 
-
   static async fetchCharacters() {
     try {
-      // récupèrer les tables
+      // récupèrer la table de personnages
       const resPersos = await fetch("http://localhost:3000/characters");
-      const resEquip = await fetch("http://localhost:3000/equipment");
-      const resLiaisons = await fetch("http://localhost:3000/character_equipment");
 
       const charactersJson = await resPersos.json();
-      const equipmentsJson = await resEquip.json();
-      const liaisonsJson = await resLiaisons.json();
-
       const listePersonnagesComplets = [];
 
       for (let i = 0; i < charactersJson.length; i++) {
@@ -70,34 +64,13 @@ export default class CharacterProvider {
           item.image,
           item.rarete,
         );
-
-        const sonInventaire = [];
-
-        // parcourir toutes les liaisons
-        for (let j = 0; j < liaisonsJson.length; j++) {
-          const lien = liaisonsJson[j];
-
-          // si le lien appartient à ce personnage
-          if (lien.characterId === item.id) {
-            // On cherche l'equipement dans la liste complete
-            for (let k = 0; k < equipmentsJson.length; k++) {
-              const equip = equipmentsJson[k];
-              if (equip.id === lien.equipmentId) {
-                sonInventaire.push(equip);
-              }
-            }
-          }
-        }
-
-        perso.assignEquipment(sonInventaire);
-
         // Appliquer notes utilisateur depuis le localStorage
         let notesPerso = {};
         const notesStr = localStorage.getItem("notesPersonnages");
         if (notesStr) {
           notesPerso = JSON.parse(notesStr);
         }
-        
+
         if (notesPerso[perso.id]) {
           perso.note = notesPerso[perso.id];
         }
