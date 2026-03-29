@@ -68,17 +68,6 @@ export default class CharacterProvider {
         if (item.equipmentId !== undefined) {
           perso.equipmentId = item.equipmentId;
         }
-        // Appliquer notes utilisateur depuis le localStorage
-        let notesPerso = {};
-        const notesStr = localStorage.getItem("notesPersonnages");
-        if (notesStr) {
-          notesPerso = JSON.parse(notesStr);
-        }
-
-        if (notesPerso[perso.id]) {
-          perso.note = notesPerso[perso.id];
-        }
-
         listePersonnagesComplets.push(perso);
       }
 
@@ -147,6 +136,22 @@ export default class CharacterProvider {
     personnage.equipmentId = equipmentId;
 
     // On écrase l'ancien personnage par le nouveau avec le nouvel équipement
+    const responsePut = await fetch(`http://localhost:3000/characters/${characterId}`, {
+      method: "PUT",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(personnage)
+    });
+
+    const updated = await responsePut.json();
+    return updated;
+  }
+
+  static async updateCharacterNote(characterId, note) {
+    const responseGet = await fetch(`http://localhost:3000/characters/${characterId}`);
+    const personnage = await responseGet.json();
+
+    personnage.note = note;
+
     const responsePut = await fetch(`http://localhost:3000/characters/${characterId}`, {
       method: "PUT",
       headers: {"Content-Type": "application/json"},

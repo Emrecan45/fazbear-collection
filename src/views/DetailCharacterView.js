@@ -16,31 +16,17 @@ export default class DetailCharacterView {
     // récupère les données du personage grace au Provider
     const character = await CharacterProvider.getCharacter(id);
 
-    // gestion des sauvegardes pour la note avec localstorage
-    let texteNotes = localStorage.getItem("notesPersonnages");
-    let notes = {};
-    if (texteNotes !== null) {
-      notes = JSON.parse(texteNotes);
-    }
-
     let noteActuelle = 0;
-    if (notes[character.id] !== undefined) {
-      noteActuelle = notes[character.id]; // la note donné par l'utilisateur
-    } else if (character.note !== undefined) {
-      noteActuelle = character.note; // note de base dans la bdd
+    if (character.note !== undefined && character.note !== null) {
+      noteActuelle = character.note;
     }
 
     section.innerHTML = `
       <div class="position-relative">
-      <button id="back-btn" class="btn btn-outline-light position-absolute">Retour</button>
-        <div class="row mt-4 mb-4">
-          <div class="col-md-5 text-center">
-            <h1 class="text-white">${character.name}</h1>
-          </div>
-        </div>
-
+        <button id="back-btn" class="btn btn-outline-light position-absolute" style="top: 50px; left: 15px;">Retour</button>
         <div class="row">
           <div class="col-md-5 text-center">
+            <h1 class="text-white my-5">${character.name}</h1>
             <img src="${character.image}" alt="${character.name}" style="max-height: 400px;">
             
             <div class="mt-3">
@@ -56,7 +42,7 @@ export default class DetailCharacterView {
           </div>
 
           <div class="col-md-7 text-white">
-            <h3>${character.title}</h3>
+            <h3 class="mt-5">${character.title}</h3>
             <p class="fs-5 mb-4">${character.description}</p>
             
             <div class="d-flex align-items-center mb-4">
@@ -91,10 +77,10 @@ export default class DetailCharacterView {
     }
 
     for (let i = 0; i < etoiles.length; i++) {
-      etoiles[i].addEventListener("click", function() {
+      etoiles[i].addEventListener("click", async function() {
         let noteChoisie = parseInt(this.getAttribute("data-value"));
-        notes[character.id] = noteChoisie;
-        localStorage.setItem("notesPersonnages", JSON.stringify(notes));
+        await CharacterProvider.updateCharacterNote(character.id, noteChoisie);
+        character.note = noteChoisie;
         majEtoiles(noteChoisie);
       });
     }
@@ -109,16 +95,32 @@ export default class DetailCharacterView {
     if (origine === 'inventaire') {
       const tousLesEquipements = await EquipmentProvider.fetchEquipments();
       let equipementActuel = null;
+
+      let texteInv = localStorage.getItem("inventaireEquipements");
+      let monSac = [];
+      if (texteInv !== null) {
+          monSac = JSON.parse(texteInv);
+      }
       
-      // On cherche l'équipement du personnage
       if (character.equipmentId !== null && character.equipmentId !== undefined) {
-        for (let k = 0; k < tousLesEquipements.length; k++) {
-          if (tousLesEquipements[k].id === character.equipmentId) {
-            equipementActuel = tousLesEquipements[k];
-            break;
-          }
+        let jeLePossede = false;
+        for (let i = 0; i < monSac.length; i++) {
+            if (monSac[i] === character.equipmentId) {
+                jeLePossede = true;
+                break;
+            }
+        }
+
+        if (jeLePossede === true) {
+            for (let k = 0; k < tousLesEquipements.length; k++) {
+              if (tousLesEquipements[k].id === character.equipmentId) {
+                equipementActuel = tousLesEquipements[k];
+                break;
+              }
+            }
         }
       }
+
       this.appliquerEquipmentBonus(equipementActuel, character);
 
       // Proposer les équipements du joueur
