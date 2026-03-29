@@ -116,7 +116,7 @@ export default class DetailCharacterView {
           }
         }
       }
-      this.appliquerEquipmentBonus(equipementActuel);
+      this.appliquerEquipmentBonus(equipementActuel, character);
 
       // Proposer les équipements du joueur
       const equipementsPossedes = await EquipmentProvider.fetchEquipementsPossedes();
@@ -188,13 +188,13 @@ export default class DetailCharacterView {
             }
           }
       }
-      DetailCharacterView.appliquerEquipmentBonus(equipementAssigne);
+      DetailCharacterView.appliquerEquipmentBonus(equipementAssigne, character);
     });
 
     return conteneur;
   }
 
-  static appliquerEquipmentBonus(equipement) {
+  static appliquerEquipmentBonus(equipement, character) {
     const section = document.getElementById("personnage");
     // Nettoyage des anciens bonus affichés
     const lignesStats = section.querySelectorAll("[data-stat]");
@@ -207,11 +207,12 @@ export default class DetailCharacterView {
 
     if (equipement !== null) {
       const bonus = Utils.parseBonusStat(equipement.bonusStat);
-      const ligneCible = section.querySelector("[data-stat='" + bonus.cleHtml + "']");
+      const ligneCible = section.querySelector("[data-stat='" + bonus.stat + "']");
+      const total = character.stats[bonus.stat] + bonus.valeur;
 
       const badge = document.createElement("span");
       badge.className = "equipment-bonus text-success ms-2";
-      badge.textContent = bonus.texte;
+      badge.textContent = `${bonus.texte} (${total})`;
       ligneCible.appendChild(badge);
     }
   }
