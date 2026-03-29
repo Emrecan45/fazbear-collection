@@ -25,7 +25,7 @@ export default class DetailCharacterView {
       <div class="position-relative">
         <button id="back-btn" class="btn btn-outline-light position-absolute" style="top: 50px; left: 15px;">Retour</button>
         <div class="row">
-          <div class="col-md-5 text-center">
+          <div class="col-md-5 text-center" style="padding-left: 100px;">
             <h1 class="text-white my-5">${character.name}</h1>
             <img src="${character.image}" alt="${character.name}" style="max-height: 400px;">
             
@@ -41,7 +41,7 @@ export default class DetailCharacterView {
             </div>
           </div>
 
-          <div class="col-md-7 text-white">
+          <div class="col-md-7 text-white" style="padding-top: 15px;">
             <h3 class="mt-5">${character.title}</h3>
             <p class="fs-5 mb-4">${character.description}</p>
             
@@ -110,11 +110,9 @@ export default class DetailCharacterView {
       const equipementsPossedes = await EquipmentProvider.fetchEquipementsPossedes();
       const zoneAttribution = section.querySelector("#champ-equipmnt");
       
-      if (equipementsPossedes && equipementsPossedes.length > 0) {
-        const interfaceAttribution = this.renderAssignEquipment(character, equipementsPossedes);
-        if (zoneAttribution && interfaceAttribution) {
-          zoneAttribution.appendChild(interfaceAttribution);
-        }
+      const interfaceAttribution = this.renderAssignEquipment(character, equipementsPossedes || []);
+      if (zoneAttribution && interfaceAttribution) {
+        zoneAttribution.appendChild(interfaceAttribution);
       }
     }
   }
