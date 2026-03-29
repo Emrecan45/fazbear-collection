@@ -32,19 +32,28 @@ export default class GachaService {
     return candidats[indexAleatoire];
   }
 
-  static ajouterAInventaire(id) {
+  static ajouterPersonnageAInventaire(id) {
     let inventaire = [];
-    let sauvegarde = localStorage.getItem('inventaireJoueur');
+    let sauvegarde = localStorage.getItem('inventairePersonnages');
 
     //  récupère l'inventaire du localStorage et si pas encore d'inventaire dans localStorage, on fait avec une liste vide
     if (sauvegarde !== null) {
       inventaire = JSON.parse(sauvegarde);
     }
+    inventaire.push(id);
+    localStorage.setItem('inventairePersonnages', JSON.stringify(inventaire));
+  }
+  // On ajoute le nouveau id a la liste de l'inventaire
+  static ajouterEquipementAInventaire(id) {
+    let inventaire = [];
+    let sauvegarde = localStorage.getItem('inventaireEquipements');
 
-    // On ajoute le nouveau id a la liste de l'inventaire
+    if (sauvegarde !== null) {
+      inventaire = JSON.parse(sauvegarde);
+    }
     inventaire.push(id);
 
     // on met l'inventaire à jour dans le localStorage
-    localStorage.setItem('inventaireJoueur', JSON.stringify(inventaire));
+    localStorage.setItem('inventaireEquipements', JSON.stringify(inventaire));
   }
 }

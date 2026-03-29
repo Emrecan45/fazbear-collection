@@ -9,6 +9,7 @@ function cacherToutesLesSections() {
   let sections = document.querySelectorAll(".section-page");
   for (let i = 0; i < sections.length; i++) {
     sections[i].style.display = "none";
+    sections[i].innerHTML = "";
   }
 }
 
@@ -23,14 +24,10 @@ async function router() {
     document.body.classList.add('accueil');
     await AccueilView.render();
   } 
-  else if (request.resource === "personnages") {
+  else if (request.resource === "catalogue") {
     document.getElementById("catalogue").style.display = "block";
-    await CatalogueView.render('personnages'); 
+    await CatalogueView.render(request.id || 'personnages'); 
   }
-  else if (request.resource === "equipements") {
-    document.getElementById("catalogue").style.display = "block";
-    await CatalogueView.render('equipements');
-  } 
   else if (request.resource === "inventaire") {
     document.getElementById("inventaire").style.display = "block";
     await InventaireView.render();

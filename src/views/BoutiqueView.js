@@ -35,7 +35,7 @@ export default class BoutiqueView {
         return;
       }
 
-      GachaService.ajouterAInventaire(obtenu.id);
+      GachaService.ajouterPersonnageAInventaire(obtenu.id);
       resultContainer.innerHTML = `<div class="row justify-content-center">${CharacterCard.getHtml(obtenu)}</div>`;
     };
 
@@ -51,7 +51,7 @@ export default class BoutiqueView {
         return;
       }
 
-      GachaService.ajouterAInventaire(obtenu.id);
+      GachaService.ajouterEquipementAInventaire(obtenu.id);
       resultContainer.innerHTML = `<div class="row justify-content-center">${EquipmentCard.getHtml(obtenu)}</div>`;
     };
   }

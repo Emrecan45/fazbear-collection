@@ -7,9 +7,9 @@ export default class CharacterCard {
       case "légendaire":
         return "warning text-dark"; // Jaune
       case "épique":
-        return "danger"; // Orange
-      case "rare":
         return "info"; // Bleu
+      case "rare":
+        return "danger"; // Orange
       default:
         return "secondary"; // Gris
     }

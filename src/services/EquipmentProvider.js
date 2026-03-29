@@ -64,4 +64,29 @@ export default class EquipmentProvider {
     return resultats;
   }
 
+  static async fetchEquipementsPossedes() {
+    const equipements = await this.fetchEquipments();
+    
+    let idsSauvegardes = [];
+    let sauvegarde = localStorage.getItem("inventaireEquipements");
+    if (sauvegarde !== null) {
+      idsSauvegardes = JSON.parse(sauvegarde);
+    }
+
+    let possedes = [];
+    for (let i = 0; i < equipements.length; i++) {
+      let e = equipements[i];
+      let aTrouve = false;
+      for (let j = 0; j < idsSauvegardes.length; j++) {
+        if (idsSauvegardes[j] == e.id) {
+          aTrouve = true;
+          break;
+        }
+      }
+      if (aTrouve === true) {
+        possedes.push(e);
+      }
+    }
+    return possedes;
+  }
 }

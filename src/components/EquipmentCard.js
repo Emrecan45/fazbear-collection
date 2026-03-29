@@ -6,9 +6,9 @@ export default class EquipmentCard {
       case "légendaire":
         return "warning text-dark";
       case "épique":
-        return "danger";
-      case "rare":
         return "info";
+      case "rare":
+        return "danger";
       default:
         return "secondary";
     }
