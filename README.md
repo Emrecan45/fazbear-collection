@@ -18,7 +18,7 @@ Cette application est une **Single Page Application (SPA)** développée en Java
     ```bash
     git clone https://github.com/Emrecan45/JS_TP_note.git
     ```
-2. **Lancer le serveur de données** (nécessite `json-server`) :
+2. **Lancer le serveur de données** (du meme port que dans config.js) :
     ```bash
     npx json-server data/db.json --port 3000
     ```
@@ -27,7 +27,8 @@ Cette application est une **Single Page Application (SPA)** développée en Java
     npx serve
     ```
     
-    Si le port 3000 est deja utilisé :
+    **Note** (si le port 3000 est deja utilisé) :
+    
     ```bash
     npx kill-port 3000
     ```

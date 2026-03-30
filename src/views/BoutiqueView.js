@@ -24,33 +24,13 @@ export default class BoutiqueView {
     const resultContainer = document.getElementById('result-container');
 
     btnPerso.onclick = function() {
-      if (!personnages || personnages.length === 0) {
-        resultContainer.innerHTML = '<p class="text-center">Aucun personnage disponible.</p>';
-        return;
-      }
-
       const obtenu = GachaService.tirageAleatoire(personnages);
-      if (!obtenu) {
-        resultContainer.innerHTML = '<p class="text-center">Aucun résultat.</p>';
-        return;
-      }
-
       GachaService.ajouterPersonnageAInventaire(obtenu.id);
       resultContainer.innerHTML = `<div class="row justify-content-center">${CharacterCard.getHtml(obtenu, false)}</div>`;
     };
 
     btnEquip.onclick = function() {
-      if (!equipements || equipements.length === 0) {
-        resultContainer.innerHTML = '<p class="text-center">Aucun équipement disponible.</p>';
-        return;
-      }
-
       const obtenu = GachaService.tirageAleatoire(equipements);
-      if (!obtenu) {
-        resultContainer.innerHTML = '<p class="text-center">Aucun résultat.</p>';
-        return;
-      }
-
       GachaService.ajouterEquipementAInventaire(obtenu.id);
       resultContainer.innerHTML = `<div class="row justify-content-center">${EquipmentCard.getHtml(obtenu, false)}</div>`;
     };

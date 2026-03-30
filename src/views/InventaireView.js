@@ -10,13 +10,7 @@ import NavigationOnglet from "../components/NavigationOnglet.js";
 import FavoriteButton from "../components/FavoriteButton.js";
 
 export default class InventaireView {
-  static async render() {
-    let request = Utils.parseRequestURL();
-    
-    let mode = "personnages";
-    if (request.id === "equipements") {
-      mode = "equipements";
-    }
+  static async render(mode) {
 
     let section = document.getElementById("inventaire");
     let personnagesDuJoueur = await CharacterProvider.fetchPersonnagesPossedes();

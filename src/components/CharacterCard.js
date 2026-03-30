@@ -47,10 +47,10 @@ export default class CharacterCard {
                 <h5 class="card-title mb-0">${character.name}</h5>
                 ${RarityBadge.getHtml(character.rarete)}
               </div>
-              <h6 class="card-subtitle mb-2 text-muted">${character.title}</h6>            
+              <h6 class="card-subtitle text-muted">${character.title}</h6>            
               
               <div class="d-flex justify-content-between align-items-center">
-                <div class="text-warning">${etoiles}</div>
+                <div class="text-warning" style="font-size: 1.5rem;">${etoiles}</div>
                 <a href="${href}" class="btn btn-sm btn-outline-light">Détails</a>
               </div>
             </div>

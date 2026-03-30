@@ -2,6 +2,7 @@ import CharacterProvider from "../services/CharacterProvider.js";
 import EquipmentProvider from "../services/EquipmentProvider.js";
 import Utils from "../services/Utils.js";
 import RarityBadge from "../components/RarityBadge.js";
+import StatBar from "../components/StatBar.js";
 
 export default class DetailCharacterView {
   static async render(id, origine) {
@@ -15,55 +16,43 @@ export default class DetailCharacterView {
     // récupère les données du personage grace au Provider
     const character = await CharacterProvider.getCharacter(id);
 
-    // gestion des sauvegardes pour la note avec localstorage
-    let texteNotes = localStorage.getItem("notesPersonnages");
-    let notes = {};
-    if (texteNotes !== null) {
-      notes = JSON.parse(texteNotes);
-    }
-
     let noteActuelle = 0;
-    if (notes[character.id] !== undefined) {
-      noteActuelle = notes[character.id]; // la note donné par l'utilisateur
-    } else if (character.note !== undefined) {
-      noteActuelle = character.note; // note de base dans la bdd
+    if (character.note !== undefined && character.note !== null) {
+      noteActuelle = character.note;
     }
 
     section.innerHTML = `
-      <div class="row mt-4 mb-4">
-        <div class="col-md-5 text-center">
-          <h2>${RarityBadge.getHtml(character.rarete)}</h2>
-          <h1 class="text-white">${character.name}</h1>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-5 mb-4 text-center">
-          <img src="${character.image}" alt="${character.name}" style="max-height: 400px;">
-          
-          <div class="mt-3">
-            <div class="fs-5 mb-2 text-white">Notez cet animatronique</div>
-              <div class="text-warning" style="font-size: 1.8rem;">
-                <span class="star" data-value="1" style="cursor: pointer;">☆</span>
-                <span class="star" data-value="2" style="cursor: pointer;">☆</span>
-                <span class="star" data-value="3" style="cursor: pointer;">☆</span>
-                <span class="star" data-value="4" style="cursor: pointer;">☆</span>
-                <span class="star" data-value="5" style="cursor: pointer;">☆</span>
-              </div>
+      <div class="position-relative">
+        <button id="back-btn" class="btn btn-outline-light position-absolute" style="top: 50px; left: 15px;">Retour</button>
+        <div class="row">
+          <div class="col-md-5 text-center" style="padding-left: 100px;">
+            <h1 class="text-white my-5">${character.name}</h1>
+            <img src="${character.image}" alt="${character.name}" style="max-height: 400px;">
+            
+            <div class="mt-3">
+              <div class="fs-5 text-white">Notez cet animatronique</div>
+                <div class="text-warning" style="font-size: 3rem;">
+                  <span class="star" data-value="1" style="cursor: pointer;">☆</span>
+                  <span class="star" data-value="2" style="cursor: pointer;">☆</span>
+                  <span class="star" data-value="3" style="cursor: pointer;">☆</span>
+                  <span class="star" data-value="4" style="cursor: pointer;">☆</span>
+                  <span class="star" data-value="5" style="cursor: pointer;">☆</span>
+                </div>
+            </div>
           </div>
-        </div>
 
-        <div class="col-md-7 text-white">
-          <h3>${character.title}</h3>
-          <p class="fs-5 mb-4">${character.description}</p>
-          
-          <p class="fs-5 mb-2" data-stat="force">Force : ${character.stats.force}</p>
-          <p class="fs-5 mb-2" data-stat="agilite">Agilité : ${character.stats.agilite}</p>
-          <p class="fs-5 mb-2" data-stat="intelligence">Intelligence : ${character.stats.intelligence}</p>
-          <div id="champ-equipmnt"></div>
-
-          <div class="mt-auto text-end pt-3">
-            <button id="back-btn" class="btn btn-outline-light">Retour</button>
+          <div class="col-md-7 text-white" style="padding-top: 15px;">
+            <h3 class="mt-5">${character.title}</h3>
+            <p class="fs-5 mb-4">${character.description}</p>
+            
+            <div class="d-flex align-items-center mb-4">
+              <span class="fs-5 me-3">Rareté :</span>
+              <h3 class="mb-0">${RarityBadge.getHtml(character.rarete)}</h3>
+            </div>
+            ${StatBar.getHtml('force', 'Force', character.stats.force, 'red')}
+            ${StatBar.getHtml('agilite', 'Agilité', character.stats.agilite, 'green')}
+            ${StatBar.getHtml('intelligence', 'Intelligence', character.stats.intelligence, 'blue')}
+            <div id="champ-equipmnt"></div>
           </div>
         </div>
       </div>
@@ -88,10 +77,10 @@ export default class DetailCharacterView {
     }
 
     for (let i = 0; i < etoiles.length; i++) {
-      etoiles[i].addEventListener("click", function() {
+      etoiles[i].addEventListener("click", async function() {
         let noteChoisie = parseInt(this.getAttribute("data-value"));
-        notes[character.id] = noteChoisie;
-        localStorage.setItem("notesPersonnages", JSON.stringify(notes));
+        await CharacterProvider.updateCharacterNote(character.id, noteChoisie);
+        character.note = noteChoisie;
         majEtoiles(noteChoisie);
       });
     }
@@ -107,7 +96,6 @@ export default class DetailCharacterView {
       const tousLesEquipements = await EquipmentProvider.fetchEquipments();
       let equipementActuel = null;
       
-      // On cherche l'équipement du personnage
       if (character.equipmentId !== null && character.equipmentId !== undefined) {
         for (let k = 0; k < tousLesEquipements.length; k++) {
           if (tousLesEquipements[k].id === character.equipmentId) {
@@ -122,11 +110,9 @@ export default class DetailCharacterView {
       const equipementsPossedes = await EquipmentProvider.fetchEquipementsPossedes();
       const zoneAttribution = section.querySelector("#champ-equipmnt");
       
-      if (equipementsPossedes && equipementsPossedes.length > 0) {
-        const interfaceAttribution = this.renderAssignEquipment(character, equipementsPossedes);
-        if (zoneAttribution && interfaceAttribution) {
-          zoneAttribution.appendChild(interfaceAttribution);
-        }
+      const interfaceAttribution = this.renderAssignEquipment(character, equipementsPossedes || []);
+      if (zoneAttribution && interfaceAttribution) {
+        zoneAttribution.appendChild(interfaceAttribution);
       }
     }
   }
@@ -135,7 +121,6 @@ export default class DetailCharacterView {
     const conteneur = document.createElement("div");
 
     const etiquette = document.createElement("label");
-    etiquette.setAttribute("for", "select-equipement");
     etiquette.className = "text-white fs-5 mb-2 me-2"; 
     etiquette.textContent = "Équipement :";
     conteneur.appendChild(etiquette);
@@ -196,24 +181,48 @@ export default class DetailCharacterView {
 
   static appliquerEquipmentBonus(equipement, character) {
     const section = document.getElementById("personnage");
-    // Nettoyage des anciens bonus affichés
-    const lignesStats = section.querySelectorAll("[data-stat]");
-    for (let i = 0; i < lignesStats.length; i++) {
-      const ancienBadge = lignesStats[i].querySelector(".equipment-bonus");
-      if (ancienBadge) {
-        ancienBadge.parentNode.removeChild(ancienBadge);
-      }
+    const anciensBadges = section.querySelectorAll(".equipment-bonus");
+    for (let i = 0; i < anciensBadges.length; i++) {
+      anciensBadges[i].remove();
     }
 
-    if (equipement !== null) {
-      const bonus = Utils.parseBonusStat(equipement.bonusStat);
-      const ligneCible = section.querySelector("[data-stat='" + bonus.stat + "']");
-      const total = character.stats[bonus.stat] + bonus.valeur;
+    const statsList = ["force", "agilite", "intelligence"];
+    
+    for (let i = 0; i < statsList.length; i++) {
+        const stat = statsList[i];
+        const block = section.querySelector(`[data-stat='${stat}']`);
+        
+        if (block) {
+            const label = block.querySelector(".stat-label");
+            const bar = block.querySelector("progress");
 
-      const badge = document.createElement("span");
-      badge.className = "equipment-bonus text-success ms-2";
-      badge.textContent = `${bonus.texte} (${total})`;
-      ligneCible.appendChild(badge);
+            // on veux la valeur avec le bonus de l'équipement
+            const valeurFinale = character.getStatFinale(stat, equipement);
+            const baseVal = character.stats[stat];
+
+            // Rendu du texte
+            let nomPropre = "";
+            if (stat === "force") {
+                nomPropre = "Force";
+            } else if (stat === "agilite") {
+                nomPropre = "Agilité";
+            } else if (stat === "intelligence") {
+                nomPropre = "Intelligence";
+            }
+            label.textContent = `${nomPropre} : ${baseVal}`;
+
+            // rendu de la barre de stat
+            bar.value = valeurFinale;
+
+            // texte de bonus si on en a un
+            if (valeurFinale > baseVal && equipement !== null && equipement.bonusStat) {
+                const bonus = Utils.parseBonusStat(equipement.bonusStat);
+                const bonusTxt = document.createElement("span");
+                bonusTxt.className = "equipment-bonus text-success ms-2";
+                bonusTxt.textContent = `${bonus.texte} (${valeurFinale})`;
+                label.appendChild(bonusTxt);
+            }
+        }
     }
   }
 }

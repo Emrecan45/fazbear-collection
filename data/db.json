@@ -241,8 +241,8 @@
     {
       "id": "18",
       "name": "Spring Bonnie",
-      "title": "Prédécesseur ",
-      "rarete": "Légendaire",
+      "title": "Prédécesseur",
+      "rarete": "Épique",
       "stats": {
         "force": 64,
         "agilite": 72,
@@ -335,13 +335,293 @@
       "description": "Une réinterprétation forestière de Freddy, plus rustique mais menaçante.",
       "note": 0,
       "image": "./src/assets/img/WoodlandFreddy.jpg"
+    },
+    {
+      "id": "25",
+      "name": "Nightmare Bonnie",
+      "title": "Terreur Nocturne",
+      "rarete": "Légendaire",
+      "stats": {
+        "force": 80,
+        "agilite": 60,
+        "intelligence": 50
+      },
+      "description": "Une version cauchemardesque et monstrueuse de Bonnie aux dents acérées.",
+      "note": 0,
+      "image": "./src/assets/img/NightmareBonnie.jpg"
+    },
+    {
+      "id": "26",
+      "name": "Nightmare Chica",
+      "title": "Cauchemar Affamé",
+      "rarete": "Légendaire",
+      "stats": {
+        "force": 75,
+        "agilite": 55,
+        "intelligence": 45
+      },
+      "description": "Une illusion monstrueuse de Chica accompagnée de son sinistre cupcake.",
+      "note": 0,
+      "image": "./src/assets/img/NightmareChica.jpg"
+    },
+    {
+      "id": "27",
+      "name": "Foxy",
+      "title": "Renard Pirate",
+      "rarete": "Rare",
+      "stats": {
+        "force": 50,
+        "agilite": 85,
+        "intelligence": 60
+      },
+      "description": "L'animatronique exclu de la crique des pirates, célèbre pour sa vitesse foudroyante.",
+      "note": 0,
+      "image": "./src/assets/img/Foxy.jpg"
+    },
+    {
+      "id": "28",
+      "name": "Toy Freddy",
+      "title": "Mascotte Nouvelle Génération",
+      "rarete": "Rare",
+      "stats": {
+        "force": 60,
+        "agilite": 40,
+        "intelligence": 70
+      },
+      "description": "Une version en plastique brillant de Freddy, conçue avec la reconnaissance faciale.",
+      "note": 0,
+      "image": "./src/assets/img/ToyFreddy.jpg"
+    },
+    {
+      "id": "29",
+      "name": "Toy Chica",
+      "title": "Chanteuse Jouet",
+      "rarete": "Rare",
+      "stats": {
+        "force": 35,
+        "agilite": 75,
+        "intelligence": 65
+      },
+      "description": "La nouvelle Chica, souvent vue sans son bec dans les couloirs obscurs.",
+      "note": 0,
+      "image": "./src/assets/img/ToyChica.jpg"
+    },
+    {
+      "id": "30",
+      "name": "Ennard",
+      "title": "Amalgame Métallique",
+      "rarete": "Mythique",
+      "stats": {
+        "force": 85,
+        "agilite": 80,
+        "intelligence": 90
+      },
+      "description": "Un assemblage complexe et conscient de tous les animatroniques Funtime.",
+      "note": 0,
+      "image": "./src/assets/img/Ennard.jpg"
+    },
+    {
+      "id": "31",
+      "name": "Ballora",
+      "title": "Danseuse Étoile",
+      "rarete": "Épique",
+      "stats": {
+        "force": 40,
+        "agilite": 95,
+        "intelligence": 75
+      },
+      "description": "Une animatronique gracieuse, guidée par le son de sa propre boîte à musique.",
+      "note": 0,
+      "image": "./src/assets/img/Ballora.jpg"
+    },
+    {
+      "id": "32",
+      "name": "Scrap Circus Baby",
+      "title": "Rejeton Détraqué",
+      "rarete": "Légendaire",
+      "stats": {
+        "force": 70,
+        "agilite": 60,
+        "intelligence": 85
+      },
+      "description": "Baby, reconstruite à partir de pièces de récupération et animée par une volonté de fer.",
+      "note": 0,
+      "image": "./src/assets/img/ScrapCircusBaby.jpg"
+    },
+    {
+      "id": "33",
+      "name": "Circus Baby",
+      "title": "Chanteuse Principale",
+      "rarete": "Épique",
+      "stats": {
+        "force": 65,
+        "agilite": 50,
+        "intelligence": 80
+      },
+      "description": "La star incontestée du Circus Baby's Pizza World, dotée d'une intelligence redoutable.",
+      "note": 0,
+      "image": "./src/assets/img/CircusBaby.jpg"
+    },
+    {
+      "id": "34",
+      "name": "Nightmare Mangle",
+      "title": "Horreur Suspendue",
+      "rarete": "Légendaire",
+      "stats": {
+        "force": 60,
+        "agilite": 90,
+        "intelligence": 70
+      },
+      "description": "Un enchevêtrement cauchemardesque de câbles, de métal et de dents.",
+      "note": 0,
+      "image": "./src/assets/img/NightmareMangle.jpg"
+    },
+    {
+      "id": "35",
+      "name": "Nightmare Freddy",
+      "title": "Monstre du Lit",
+      "rarete": "Légendaire",
+      "stats": {
+        "force": 85,
+        "agilite": 50,
+        "intelligence": 65
+      },
+      "description": "Un Freddy terrifiant, toujours accompagné de ses sbires, les Freddles.",
+      "note": 0,
+      "image": "./src/assets/img/NightmareFreddy.jpg"
+    },
+    {
+      "id": "36",
+      "name": "Music Man",
+      "title": "Gardien du Son",
+      "rarete": "Épique",
+      "stats": {
+        "force": 75,
+        "agilite": 65,
+        "intelligence": 55
+      },
+      "description": "Un imposant animatronique à cymbales, extrêmement sensible aux bruits forts.",
+      "note": 0,
+      "image": "./src/assets/img/MusicMan.jpg"
+    },
+    {
+      "id": "37",
+      "name": "Balloon Boy",
+      "title": "Distributeur de Ballons",
+      "rarete": "Commun",
+      "stats": {
+        "force": 10,
+        "agilite": 85,
+        "intelligence": 70
+      },
+      "description": "Un petit garçon en plastique rieur, spécialisé dans le vol de piles de lampe torche.",
+      "note": 0,
+      "image": "./src/assets/img/BalloonBoy.jpg"
+    },
+    {
+      "id": "38",
+      "name": "Lefty",
+      "title": "L.E.F.T.E.",
+      "rarete": "Épique",
+      "stats": {
+        "force": 70,
+        "agilite": 60,
+        "intelligence": 85
+      },
+      "description": "Un ours noir mystérieux, conçu spécifiquement pour capturer une entité bien précise.",
+      "note": 0,
+      "image": "./src/assets/img/Lefty.jpg"
+    },
+    {
+      "id": "39",
+      "name": "Orville Elephant",
+      "title": "Magicien Médiocre",
+      "rarete": "Commun",
+      "stats": {
+        "force": 60,
+        "agilite": 30,
+        "intelligence": 50
+      },
+      "description": "Un éléphant magicien qui adore raconter des histoires interminables.",
+      "note": 0,
+      "image": "./src/assets/img/OrvilleElephant.jpg"
+    },
+    {
+      "id": "40",
+      "name": "Golden Freddy",
+      "title": "Apparition Fantomatique",
+      "rarete": "Mythique",
+      "stats": {
+        "force": 95,
+        "agilite": 20,
+        "intelligence": 100
+      },
+      "description": "Une hallucination dorée, dotée de capacités surnaturelles inexplicables.",
+      "note": 0,
+      "image": "./src/assets/img/GoldenFreddy.jpg"
+    },
+    {
+      "id": "41",
+      "name": "Phantom Balloon Boy",
+      "title": "Hallucination Toxique",
+      "rarete": "Rare",
+      "stats": {
+        "force": 5,
+        "agilite": 90,
+        "intelligence": 60
+      },
+      "description": "Le fantôme calciné de Balloon Boy, déclenchant des erreurs systèmes s'il est observé.",
+      "note": 0,
+      "image": "./src/assets/img/PhantomBalloonBoy.jpg"
+    },
+    {
+      "id": "42",
+      "name": "Mr Hippo",
+      "title": "Conteur Bavard",
+      "rarete": "Commun",
+      "stats": {
+        "force": 55,
+        "agilite": 25,
+        "intelligence": 60
+      },
+      "description": "Un vieil hippopotame violet qui adore partager de longues anecdotes décousues avec son ami Orville.",
+      "note": 0,
+      "image": "./src/assets/img/MrHippo.jpg"
+    },
+    {
+      "id": "43",
+      "name": "Nightmare Foxy",
+      "title": "Renard du Placard",
+      "rarete": "Légendaire",
+      "stats": {
+        "force": 70,
+        "agilite": 95,
+        "intelligence": 60
+      },
+      "description": "Une version affreuse de Foxy avec une longue langue métallique et des crocs acérés.",
+      "note": 0,
+      "image": "./src/assets/img/NightmareFoxy.jpg"
+    },
+    {
+      "id": "44",
+      "name": "Puppet",
+      "title": "Protecteur des Âmes",
+      "rarete": "Mythique",
+      "stats": {
+        "force": 40,
+        "agilite": 90,
+        "intelligence": 95
+      },
+      "description": "La marionnette insaisissable qui a donné la vie aux autres pour qu'ils obtiennent vengeance.",
+      "note": 0,
+      "image": "./src/assets/img/Puppet.jpg"
     }
   ],
   "equipment": [
     {
       "id": "1",
       "name": "Mécanisme Springlock Instable",
-      "bonusStat": "+25 force",
+      "bonusStat": "+35 force",
       "rarete": "Légendaire"
     },
     {
@@ -353,13 +633,13 @@
     {
       "id": "3",
       "name": "Badge du Gardien de Nuit",
-      "bonusStat": "+15 intelligence",
+      "bonusStat": "+10 intelligence",
       "rarete": "Commun"
     },
     {
       "id": "4",
       "name": "Servomoteurs Révisés",
-      "bonusStat": "+15 agilite",
+      "bonusStat": "+10 agilite",
       "rarete": "Commun"
     },
     {
@@ -391,6 +671,114 @@
       "name": "Boîte à Musique de la Marionnette",
       "bonusStat": "+30 agilite",
       "rarete": "Épique"
+    },
+    {
+      "id": "10",
+      "name": "Injection de Remnant",
+      "bonusStat": "+45 agilite",
+      "rarete": "Mythique"
+    },
+    {
+      "id": "11",
+      "name": "Puce de Contrôle V.A.N.N.I.",
+      "bonusStat": "+35 intelligence",
+      "rarete": "Légendaire"
+    },
+    {
+      "id": "12",
+      "name": "Crochet Pirate Affûté",
+      "bonusStat": "+30 force",
+      "rarete": "Épique"
+    },
+    {
+      "id": "13",
+      "name": "Tablette de Sécurité Piratée",
+      "bonusStat": "+30 intelligence",
+      "rarete": "Épique"
+    },
+    {
+      "id": "14",
+      "name": "Le Scooper",
+      "bonusStat": "+35 force",
+      "rarete": "Épique"
+    },
+    {
+      "id": "15",
+      "name": "Batterie Extra-Capacité",
+      "bonusStat": "+20 agilite",
+      "rarete": "Rare"
+    },
+    {
+      "id": "16",
+      "name": "Câblage Renforcé Fazbear",
+      "bonusStat": "+20 force",
+      "rarete": "Rare"
+    },
+    {
+      "id": "17",
+      "name": "Taser de Technicien",
+      "bonusStat": "+25 force",
+      "rarete": "Rare"
+    },
+    {
+      "id": "18",
+      "name": "Masque d'Animatronique Vide",
+      "bonusStat": "+20 intelligence",
+      "rarete": "Rare"
+    },
+    {
+      "id": "19",
+      "name": "Ventilateur de Bureau Puissant",
+      "bonusStat": "+20 agilite",
+      "rarete": "Rare"
+    },
+    {
+      "id": "20",
+      "name": "Pile AA Rechargée",
+      "bonusStat": "+5 agilite",
+      "rarete": "Commun"
+    },
+    {
+      "id": "21",
+      "name": "Part de Pizza Rassise",
+      "bonusStat": "+5 force",
+      "rarete": "Commun"
+    },
+    {
+      "id": "22",
+      "name": "Peluche Freddy Usée",
+      "bonusStat": "+5 intelligence",
+      "rarete": "Commun"
+    },
+    {
+      "id": "23",
+      "name": "Vis Rouillée",
+      "bonusStat": "+5 force",
+      "rarete": "Commun"
+    },
+    {
+      "id": "24",
+      "name": "Gobelet en Plastique Fazbear",
+      "bonusStat": "+5 agilite",
+      "rarete": "Commun"
+    },
+    {
+      "id": "25",
+      "name": "Lampe Torche Basique",
+      "bonusStat": "+10 agilite",
+      "rarete": "Commun"
+    },
+    {
+      "id": "26",
+      "name": "Ticket de la Salle d'Arcade",
+      "bonusStat": "+5 intelligence",
+      "rarete": "Commun"
+    },
+    {
+      "id": "27",
+      "name": "Tournevis de Maintenance",
+      "bonusStat": "+10 force",
+      "rarete": "Commun"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

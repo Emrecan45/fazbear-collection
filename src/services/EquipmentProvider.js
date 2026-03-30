@@ -1,9 +1,10 @@
 import Equipment from "../models/Equipment.js";
+import URL_API from "../config.js";"../config.js";
 
 export default class EquipmentProvider {
   static async fetchEquipments() {
     try {
-      const response = await fetch("http://localhost:3000/equipment");
+      const response = await fetch(`${URL_API}/equipment`);
       const json = await response.json();
 
       const tableauObjets = [];

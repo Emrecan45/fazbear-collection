@@ -1,4 +1,5 @@
 import Character from "../models/Character.js";
+import URL_API from "../config.js";"../config.js";
 
 export default class CharacterProvider {
   static filterCharacters(personnages, criteres) {
@@ -47,7 +48,7 @@ export default class CharacterProvider {
   static async fetchCharacters() {
     try {
       // récupèrer la table de personnages
-      const resPersos = await fetch("http://localhost:3000/characters");
+      const resPersos = await fetch(`${URL_API}/characters`);
 
       const charactersJson = await resPersos.json();
       const listePersonnagesComplets = [];
@@ -62,23 +63,11 @@ export default class CharacterProvider {
           item.description,
           item.note,
           item.image,
-          item.rarete,
+          item.rarete
         );
-        // si item a un equipmentId, on l'ajoute au personnage
         if (item.equipmentId !== undefined) {
           perso.equipmentId = item.equipmentId;
         }
-        // Appliquer notes utilisateur depuis le localStorage
-        let notesPerso = {};
-        const notesStr = localStorage.getItem("notesPersonnages");
-        if (notesStr) {
-          notesPerso = JSON.parse(notesStr);
-        }
-
-        if (notesPerso[perso.id]) {
-          perso.note = notesPerso[perso.id];
-        }
-
         listePersonnagesComplets.push(perso);
       }
 
@@ -91,7 +80,7 @@ export default class CharacterProvider {
 
   static async getCharacter(id) {
     try {
-      const response = await fetch(`http://localhost:3000/characters/${id}`);
+      const response = await fetch(`${URL_API}/characters/${id}`);
       const c = await response.json();
       const perso = new Character(
         c.id,
@@ -101,7 +90,7 @@ export default class CharacterProvider {
         c.description,
         c.note,
         c.image,
-        c.rarete,
+        c.rarete
       );
       if (c.equipmentId !== undefined) {
         perso.equipmentId = c.equipmentId;
@@ -140,14 +129,14 @@ export default class CharacterProvider {
 
   static async updateCharacterEquipment(characterId, equipmentId) {
     // On récupère le personnage
-    const responseGet = await fetch(`http://localhost:3000/characters/${characterId}`);
+    const responseGet = await fetch(`${URL_API}/characters/${characterId}`);
     const personnage = await responseGet.json();
 
     // On modifie l'id de l'équipement
     personnage.equipmentId = equipmentId;
 
     // On écrase l'ancien personnage par le nouveau avec le nouvel équipement
-    const responsePut = await fetch(`http://localhost:3000/characters/${characterId}`, {
+    const responsePut = await fetch(`${URL_API}/characters/${characterId}`, {
       method: "PUT",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(personnage)
@@ -155,5 +144,31 @@ export default class CharacterProvider {
 
     const updated = await responsePut.json();
     return updated;
+  }
+
+  static async updateCharacterNote(characterId, note) {
+    const responseGet = await fetch(`${URL_API}/characters/${characterId}`);
+    const personnage = await responseGet.json();
+
+    personnage.note = note;
+
+    const responsePut = await fetch(`${URL_API}/characters/${characterId}`, {
+      method: "PUT",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(personnage)
+    });
+
+    const updated = await responsePut.json();
+    return updated;
+  }
+
+  static async resetEquipments() {
+    const personnages = await this.fetchCharacters();
+    for (let i = 0; i < personnages.length; i++) {
+      let p = personnages[i];
+      if (p.equipmentId !== null && p.equipmentId !== undefined) {
+        await this.updateCharacterEquipment(p.id, null);
+      }
+    }
   }
 }

@@ -12,6 +12,10 @@ import FavoriteButton from "../components/FavoriteButton.js";
 export default class CatalogueView {
   static async render(mode) {
     let section = document.getElementById("catalogue");
+    
+    let personnages = await CharacterProvider.fetchCharacters();
+    let equipements = await EquipmentProvider.fetchEquipments();
+
     section.innerHTML = "<h1 id='catalogue-title' class='text-center text-white my-4'>Catalogue</h1>" +
       "<div class='d-flex justify-content-center mb-3' id='view-mode-tabs'>" +
         "<a href='#/catalogue/personnages' id='tab-characters' class='btn btn-outline-light mx-1'>Animatroniques</a>" +
@@ -20,8 +24,6 @@ export default class CatalogueView {
       SearchBar.getHtml() +
       "<div id='characters-list'></div><div id='pagination'></div>";
 
-    let personnages = await CharacterProvider.fetchCharacters();
-    let equipements = await EquipmentProvider.fetchEquipments();
     let itemsParPage = 6;
 
     function updateList(page) {
