@@ -28,7 +28,7 @@ export default class InventaireView {
 
     if (mode === 'personnages' && personnagesDuJoueur.length === 0) {
       contentArea.innerHTML = "<p class='text-center text-white'>Votre inventaire d'animatroniques est vide, allez visiter la boutique !</p>" +
-        "<img src='src/assets/img/Inventaire.png' alt='Inventaire vide' style='height: 450px; display: block; margin: 0 auto;'>";
+        "<img src='./public/assets/img/Inventaire.png' alt='Inventaire vide' style='height: 450px; display: block; margin: 0 auto;'>";
       NavigationOnglet.gererOngletsActifs(mode);
       NavigationOnglet.setNoteFilter(mode);
       FilterService.setMode(mode);
@@ -38,7 +38,7 @@ export default class InventaireView {
 
     if (mode === 'equipements' && equipementsDuJoueur.length === 0) {
       contentArea.innerHTML = "<p class='text-center text-white'>Votre inventaire d'équipements est vide, allez visiter la boutique !</p>" +
-        "<img src='src/assets/img/Inventaire.png' alt='Inventaire vide' style='height: 450px; display: block; margin: 0 auto;'>";
+        "<img src='./public/assets/img/Inventaire.png' alt='Inventaire vide' style='height: 450px; display: block; margin: 0 auto;'>";
       NavigationOnglet.gererOngletsActifs(mode);
       NavigationOnglet.setNoteFilter(mode);
       FilterService.setMode(mode);
