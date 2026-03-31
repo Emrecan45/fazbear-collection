@@ -8,7 +8,7 @@ export default class AccueilView {
         <h1 class='text-center text-white my-4'>Bienvenue sur Fazbear.io !</h1>
         
         <div class="row justify-content-center mt-5">
-          <div class="col-md-8 text-center text-white" style="background-color: rgba(0, 0, 0, 0.7); padding: 40px; border-radius: 15px;">
+          <div class="col-md-8 text-center text-white" style="background-color: rgba(0, 0, 0, 0.7); padding: 40px;">
             
             <p class="fs-4 mb-5">L'application ultime pour les collectionneurs de l'univers <strong>Five Nights at Freddy's</strong>.</p>
             
