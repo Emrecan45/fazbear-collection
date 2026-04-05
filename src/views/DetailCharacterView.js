@@ -3,6 +3,7 @@ import EquipmentProvider from "../services/EquipmentProvider.js";
 import Utils from "../services/Utils.js";
 import RarityBadge from "../components/RarityBadge.js";
 import StatBar from "../components/StatBar.js";
+import EquipmentCard from "../components/EquipmentCard.js";
 
 export default class DetailCharacterView {
   static async render(id, origine) {
@@ -127,7 +128,7 @@ export default class DetailCharacterView {
 
     const menuDeroulant = document.createElement("select");
     menuDeroulant.id = "select-equipement";
-    menuDeroulant.className = "form-select form-card mb-2 d-inline-block w-auto";
+    menuDeroulant.className = "form-select form-card mb-2";
 
     const optionAucun = document.createElement("option");
     optionAucun.value = "";
@@ -150,6 +151,17 @@ export default class DetailCharacterView {
     }
 
     conteneur.appendChild(menuDeroulant);
+    const affichageCard = document.createElement("div");
+    affichageCard.className = "equip-card-display mt-2"; 
+    if (character.equipmentId) {
+      for (let i = 0; i < equipementsDisponibles.length; i++) {
+        if (equipementsDisponibles[i].id === character.equipmentId) {
+          affichageCard.innerHTML = `<div class="row">${EquipmentCard.getHtml(equipementsDisponibles[i], false)}</div>`;
+          break;
+        }
+      }
+    }
+    conteneur.appendChild(affichageCard);
 
     // Changement d'équipement
     menuDeroulant.addEventListener("change", async function() {
@@ -173,6 +185,16 @@ export default class DetailCharacterView {
             }
           }
       }
+      // mettre à jour l'affichage de la card sous le select
+      const display = conteneur.querySelector(".equip-card-display");
+      if (display) {
+        if (equipementAssigne) {
+          display.innerHTML = `<div class="row">${EquipmentCard.getHtml(equipementAssigne, false)}</div>`;
+        } else {
+          display.innerHTML = "";
+        }
+      }
+
       DetailCharacterView.appliquerEquipmentBonus(equipementAssigne, character);
     });
 

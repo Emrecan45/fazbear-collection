@@ -103,3 +103,11 @@ body {
   height: 22px;
   margin-top: 0.15rem;
 }
+
+.equip-card-display .col-md-4 {
+  width: 460px;
+}
+
+#select-equipement {
+  width: 470px;
+}
