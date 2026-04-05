@@ -1,0 +1,281 @@
+import CharacterProvider from "../services/CharacterProvider.js";
+import EquipmentProvider from "../services/EquipmentProvider.js";
+import Utils from "../services/Utils.js";
+import RarityBadge from "../components/RarityBadge.js";
+import StatBar from "../components/StatBar.js";
+import EquipmentCard from "../components/EquipmentCard.js";
+
+export default class DetailCharacterView {
+
+  // Affiche la page de détail d'un personnage
+  static async render(id, origine) {
+    
+    // on cible d'abord la section ou on va afficher le personnage
+    let section = document.getElementById("personnage");
+    
+
+    section.style.display = "block";
+
+    // récupère les données du personage grace au Provider
+    const character = await CharacterProvider.getCharacter(id);
+
+    const notePersonnelleStockee = localStorage.getItem("note_perso_" + id);
+    let noteActuelle = 0;
+    if (notePersonnelleStockee !== null) {
+      noteActuelle = parseInt(notePersonnelleStockee);
+    }
+
+    section.innerHTML = `
+      <div class="position-relative">
+        <button id="back-btn" class="btn btn-outline-light position-absolute" style="top: 50px; left: 15px;">Retour</button>
+        <div class="row">
+          <div class="col-md-5 text-center" style="padding-left: 100px;">
+            <h1 class="text-white my-5">${character.name}</h1>
+            <img src="${character.image}" alt="${character.name}" style="max-height: 400px; max-width: 100%;">
+            
+            <div class="mt-3">
+              <div class="fs-5 text-white">Notez cet animatronique</div>
+                <div class="text-warning" style="font-size: 3rem;">
+                  <span class="star" data-value="1" style="cursor: pointer;">☆</span>
+                  <span class="star" data-value="2" style="cursor: pointer;">☆</span>
+                  <span class="star" data-value="3" style="cursor: pointer;">☆</span>
+                  <span class="star" data-value="4" style="cursor: pointer;">☆</span>
+                  <span class="star" data-value="5" style="cursor: pointer;">☆</span>
+                </div>
+                <div id="moyenne-notes" class="d-flex align-items-center justify-content-center gap-2 mt-2 text-white" style="font-size:1.3rem;">
+                  <span class="text-warning">★</span>
+                  <span id="moyenne-etoiles" class="fw-bold"></span>
+                  <span id="moyenne-texte" class="text-secondary"></span>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-7 text-white" style="padding-top: 15px;">
+            <h3 class="mt-5">${character.title}</h3>
+            <p class="fs-5 mb-4">${character.description}</p>
+            
+            <div class="d-flex align-items-center mb-4">
+              <span class="fs-5 me-3">Rareté :</span>
+              <h3 class="mb-0">${RarityBadge.getHtml(character.rarete)}</h3>
+            </div>
+            ${StatBar.getHtml('force', 'Force', character.stats.force, 'red')}
+            ${StatBar.getHtml('agilite', 'Agilité', character.stats.agilite, 'green')}
+            ${StatBar.getHtml('intelligence', 'Intelligence', character.stats.intelligence, 'blue')}
+            <div id="champ-equipmnt"></div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // ajout des evenement
+    const etoiles = section.querySelectorAll(".star");
+    const moyenneEtoiles = section.querySelector("#moyenne-etoiles");
+    const moyenneTexte = section.querySelector("#moyenne-texte");
+    let nombreNotes = character.nombreNotes();
+    let moyenne = character.note;
+
+    // Met à jour l'affichage de la moyenne
+    function majMoyenne() {
+      moyenneEtoiles.textContent = moyenne;
+      moyenneTexte.textContent = "(" + nombreNotes + " avis)";
+    }
+    majMoyenne();
+
+    // Met à jour l'affichage des étoiles selon la valeur donnée
+    function majEtoiles(valeur) {
+      for (let i = 0; i < etoiles.length; i++) {
+        let valeurEtoile = parseInt(etoiles[i].getAttribute("data-value"));
+        if (valeurEtoile <= valeur) {
+          etoiles[i].textContent = "★";
+        } else {
+          etoiles[i].textContent = "☆";
+        }
+      }
+    }
+
+    if (noteActuelle > 0) {
+      majEtoiles(noteActuelle);
+    }
+
+    for (let i = 0; i < etoiles.length; i++) {
+      etoiles[i].addEventListener("click", async function() {
+        let noteChoisie = parseInt(this.getAttribute("data-value"));
+        let ancienneNote = noteActuelle;
+        const updated = await CharacterProvider.updateCharacterNote(character.id, noteChoisie, ancienneNote);
+        if (updated && updated.notes !== undefined) {
+          character.notes = updated.notes;
+          character.note = character.moyenneNote();
+        }
+        localStorage.setItem("note_perso_" + character.id, noteChoisie);
+        noteActuelle = noteChoisie;
+        majEtoiles(noteChoisie);
+        nombreNotes = character.nombreNotes();
+        moyenne = character.note;
+        majMoyenne();
+      });
+    }
+
+    // Gestion du bouton retour
+    const boutonRetour = section.querySelector("#back-btn");
+    boutonRetour.addEventListener("click", function() {
+      window.history.back();
+    });
+
+    // Afficher le bonus d'équipement uniquement si on vient de l'inventaire
+    if (origine === 'inventaire') {
+      const tousLesEquipements = await EquipmentProvider.fetchEquipments();
+      let equipementActuel = null;
+      
+      if (character.equipmentId !== null && character.equipmentId !== undefined) {
+        for (let k = 0; k < tousLesEquipements.length; k++) {
+          if (tousLesEquipements[k].id === character.equipmentId) {
+            equipementActuel = tousLesEquipements[k];
+            break;
+          }
+        }
+      }
+      this.appliquerEquipmentBonus(equipementActuel, character);
+
+      // Proposer les équipements du joueur
+      const equipementsPossedes = await EquipmentProvider.fetchEquipementsPossedes();
+      const zoneAttribution = section.querySelector("#champ-equipmnt");
+      
+      const interfaceAttribution = this.renderAssignEquipment(character, equipementsPossedes || []);
+      if (zoneAttribution && interfaceAttribution) {
+        zoneAttribution.appendChild(interfaceAttribution);
+      }
+    }
+  }
+
+  // Génère l'interface de sélection d'équipement pour un personnage
+  static renderAssignEquipment(character, equipementsDisponibles) {
+    const conteneur = document.createElement("div");
+
+    const etiquette = document.createElement("label");
+    etiquette.className = "text-white fs-5 mb-2 me-2"; 
+    etiquette.textContent = "Équipement :";
+    conteneur.appendChild(etiquette);
+
+    const menuDeroulant = document.createElement("select");
+    menuDeroulant.id = "select-equipement";
+    menuDeroulant.className = "form-select form-card";
+
+    const optionAucun = document.createElement("option");
+    optionAucun.value = "";
+    optionAucun.textContent = "Aucun";
+    menuDeroulant.appendChild(optionAucun);
+
+    for (let i = 0; i < equipementsDisponibles.length; i++) {
+      const equipement = equipementsDisponibles[i];
+      const option = document.createElement("option");
+      option.value = equipement.id;
+      option.textContent = equipement.name;
+      
+      // verifier si c'est l'équipement actuel du personnage
+      if (character.equipmentId !== null && character.equipmentId !== undefined) {
+          if (character.equipmentId === equipement.id) {
+              option.selected = true;
+          }
+      }
+      menuDeroulant.appendChild(option);
+    }
+
+    conteneur.appendChild(menuDeroulant);
+    const affichageCard = document.createElement("div");
+    affichageCard.className = "equip-card-display mt-2"; 
+    if (character.equipmentId) {
+      for (let i = 0; i < equipementsDisponibles.length; i++) {
+        if (equipementsDisponibles[i].id === character.equipmentId) {
+          affichageCard.innerHTML = `<div class="row">${EquipmentCard.getHtml(equipementsDisponibles[i], false)}</div>`;
+          break;
+        }
+      }
+    }
+    conteneur.appendChild(affichageCard);
+
+    // Changement d'équipement
+    menuDeroulant.addEventListener("change", async function() {
+      let valeurChoisie = this.value;
+      let nouvelId = null;
+      
+      if (valeurChoisie !== "") {
+        nouvelId = valeurChoisie;
+      }
+
+      await CharacterProvider.updateCharacterEquipment(character.id, nouvelId);
+      
+      character.equipmentId = nouvelId;
+      let equipementAssigne = null;
+      
+      if (nouvelId !== null) {
+          for (let j = 0; j < equipementsDisponibles.length; j++) {
+            if (equipementsDisponibles[j].id === nouvelId) {
+              equipementAssigne = equipementsDisponibles[j];
+              break;
+            }
+          }
+      }
+      // mettre à jour l'affichage de la card sous le select
+      const display = conteneur.querySelector(".equip-card-display");
+      if (display) {
+        if (equipementAssigne) {
+          display.innerHTML = `<div class="row">${EquipmentCard.getHtml(equipementAssigne, false)}</div>`;
+        } else {
+          display.innerHTML = "";
+        }
+      }
+
+      DetailCharacterView.appliquerEquipmentBonus(equipementAssigne, character);
+    });
+
+    return conteneur;
+  }
+
+  // Met à jour les barres de stats avec le bonus de l'équipement assigné
+  static appliquerEquipmentBonus(equipement, character) {
+    const section = document.getElementById("personnage");
+    const anciensBadges = section.querySelectorAll(".equipment-bonus");
+    for (let i = 0; i < anciensBadges.length; i++) {
+      anciensBadges[i].remove();
+    }
+
+    const statsList = ["force", "agilite", "intelligence"];
+    
+    for (let i = 0; i < statsList.length; i++) {
+        const stat = statsList[i];
+        const block = section.querySelector(`[data-stat='${stat}']`);
+        
+        if (block) {
+            const label = block.querySelector(".stat-label");
+            const bar = block.querySelector("progress");
+
+            // on veux la valeur avec le bonus de l'équipement
+            const valeurFinale = character.getStatFinale(stat, equipement);
+            const baseVal = character.stats[stat];
+
+            // Rendu du texte
+            let nomPropre = "";
+            if (stat === "force") {
+                nomPropre = "Force";
+            } else if (stat === "agilite") {
+                nomPropre = "Agilité";
+            } else if (stat === "intelligence") {
+                nomPropre = "Intelligence";
+            }
+            label.textContent = `${nomPropre} : ${baseVal}`;
+
+            // rendu de la barre de stat
+            bar.value = valeurFinale;
+
+            // texte de bonus si on en a un
+            if (valeurFinale > baseVal && equipement !== null && equipement.bonusStat) {
+                const bonus = Utils.parseBonusStat(equipement.bonusStat);
+                const bonusTxt = document.createElement("span");
+                bonusTxt.className = "equipment-bonus text-success ms-2";
+                bonusTxt.textContent = `${bonus.texte} (${valeurFinale})`;
+                label.appendChild(bonusTxt);
+            }
+        }
+    }
+  }
+}
