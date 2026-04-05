@@ -43,7 +43,7 @@ export default class CharacterCard {
 
             <img src="${character.image}" loading="lazy" class="card-img-top card-compact-img" alt="${character.name}">
             <div class="card-body info">
-              <div class="d-flex justify-content-between align-items-start mb-2">
+              <div class="d-flex justify-content-between align-items-start">
                 <h5 class="card-title mb-0">${character.name}</h5>
                 ${RarityBadge.getHtml(character.rarete)}
               </div>
