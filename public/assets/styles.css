@@ -52,6 +52,7 @@ body {
 
 .card-compact .card-subtitle {
   font-size: 0.85rem;
+  display: block;
 }
 
 .card-compact .card-img-top.card-compact-img {
@@ -75,6 +76,7 @@ body {
 
 .card-compact .badge {
   color: #000;
+  margin-top: 0.7rem;
 }
 
 .form-control.form-card,
