@@ -12,7 +12,7 @@ export default class EquipmentCard {
     return `
       <div class="col-md-4 mb-4">
         <div class="card card-compact h-100 border-white bg-black text-white">
-          <div class="card-body">
+          <div class="card-body info">
             <div>
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <h5 class="card-title mb-0">${eq.name}</h5>

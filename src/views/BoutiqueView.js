@@ -26,13 +26,29 @@ export default class BoutiqueView {
     btnPerso.onclick = function() {
       const obtenu = GachaService.tirageAleatoire(personnages);
       GachaService.ajouterPersonnageAInventaire(obtenu.id);
-      resultContainer.innerHTML = `<div class="row justify-content-center">${CharacterCard.getHtml(obtenu, false)}</div>`;
+      btnPerso.disabled = true;
+      btnEquip.disabled = true;
+      resultContainer.innerHTML = `<div class="row justify-content-center card-invoc">${CharacterCard.getHtml(obtenu, false)}</div>`;
+      resultContainer.offsetWidth;
+      resultContainer.querySelector(".card-invoc").classList.add("active");
+      setTimeout(() => {
+        btnPerso.disabled = false;
+        btnEquip.disabled = false;
+      }, 1000);
     };
 
     btnEquip.onclick = function() {
       const obtenu = GachaService.tirageAleatoire(equipements);
       GachaService.ajouterEquipementAInventaire(obtenu.id);
-      resultContainer.innerHTML = `<div class="row justify-content-center">${EquipmentCard.getHtml(obtenu, false)}</div>`;
+      btnPerso.disabled = true;
+      btnEquip.disabled = true;
+      resultContainer.innerHTML = `<div class="row justify-content-center card-invoc">${EquipmentCard.getHtml(obtenu, false)}</div>`;
+      resultContainer.offsetWidth;
+      resultContainer.querySelector(".card-invoc").classList.add("active");
+      setTimeout(() => {
+        btnPerso.disabled = false;
+        btnEquip.disabled = false;
+      }, 1000);
     };
   }
 }
