@@ -27,7 +27,7 @@ export default class SearchBar {
         </div>
         <div class="col-auto mb-2 d-flex align-items-center">
           <input type="checkbox" id="favorisFilter" class="form-check-input me-2 form-card-checkbox">
-          <label for="favorisFilter" class="form-check-label text-white">Favoris uniquement</label>
+          <p class="text-white mb-0">Favoris uniquement</p>
         </div>
         <div class="col-auto mb-2">
           <button id="resetFiltersBtn" class="btn btn-outline-light">Effacer les filtres</button>

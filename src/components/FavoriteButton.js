@@ -34,6 +34,11 @@ export default class FavoriteButton {
           this.classList.add("bi-heart-fill");
           this.style.color = "#dc3545";
         }
+
+        let filtreFavoris = document.getElementById("favorisFilter");
+        if (filtreFavoris && filtreFavoris.checked) {
+          this.parentElement.parentElement.remove();
+        }
       };
     }
   }
