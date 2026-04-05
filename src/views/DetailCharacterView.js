@@ -31,7 +31,7 @@ export default class DetailCharacterView {
         <div class="row">
           <div class="col-md-5 text-center" style="padding-left: 100px;">
             <h1 class="text-white my-5">${character.name}</h1>
-            <img src="${character.image}" alt="${character.name}" style="max-height: 400px;">
+            <img src="${character.image}" alt="${character.name}" style="max-height: 400px; max-width: 100%;">
             
             <div class="mt-3">
               <div class="fs-5 text-white">Notez cet animatronique</div>
