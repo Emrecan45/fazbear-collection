@@ -44,9 +44,18 @@ export default class Character {
     return (somme / this.notes.length).toFixed(1);// arrondi à 1 décimale
   }
 
-  // Ajoute une note et met à jour la moyenne
-  ajouterNote(nouvelleNote) {
-    this.notes.push(nouvelleNote);
+  // Ajoute ou remplace une note et met à jour la moyenne
+  ajouterNote(nouvelleNote, ancienneNote = 0) {
+    if (ancienneNote > 0) {
+      const idx = this.notes.indexOf(ancienneNote);
+      if (idx !== -1) {
+        this.notes[idx] = nouvelleNote;
+      } else {
+        this.notes.push(nouvelleNote);
+      }
+    } else {
+      this.notes.push(nouvelleNote);
+    }
     this.note = this.moyenneNote();
     
     return this.note;

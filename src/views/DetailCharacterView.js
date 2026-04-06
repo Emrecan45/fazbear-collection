@@ -101,10 +101,10 @@ export default class DetailCharacterView {
       etoiles[i].addEventListener("click", async function() {
         let noteChoisie = parseInt(this.getAttribute("data-value"));
         let ancienneNote = noteActuelle;
-        await CharacterProvider.updateCharacterNote(character.id, noteChoisie, ancienneNote);
-        character.ajouterNote(noteChoisie);
-        localStorage.setItem("note_perso_" + character.id, noteChoisie);
         noteActuelle = noteChoisie;
+        await CharacterProvider.updateCharacterNote(character.id, noteChoisie, ancienneNote);
+        character.ajouterNote(noteChoisie, ancienneNote);
+        localStorage.setItem("note_perso_" + character.id, noteChoisie);
         majEtoiles(noteChoisie);
         nombreNotes = character.nombreNotes();
         moyenne = character.note;
