@@ -1,6 +1,6 @@
 <div align="center">
 
-# Fazbear.io
+# Fazbear Collection
 
 ![Inventaire](public/assets/img/Inventaire.png)
 
@@ -74,13 +74,13 @@ Configuration du déploiement :
 - Ping constants grâce à **[UptimeRobot](https://uptimerobot.com)** pour éviter la mise en veille du serveur.
 - Site validé et indexé sur **[Google Search Console](https://search.google.com/search-console)**.
 
-**🔗 Lien du site : [https://fazbear-io.vercel.app](https://fazbear-io.vercel.app)**
+**🔗 Lien du site : [https://fazbear-collection.vercel.app](https://fazbear-collection.vercel.app)**
 
 ## Bundler
 
 Un bundler est un outil qui prend tous les fichiers du projet (JS, CSS, images...) et les assemble en un petit nombre de fichiers optimisés pour le navigateur.
 
-Pour Fazbear.io, nous avons choisi **[Vite](https://vite.dev/)** car il est rapide et simple à configurer.
+Pour Fazbear Collection, nous avons choisi **[Vite](https://vite.dev/)** car il est rapide et simple à configurer.
 - `npm run dev` : il lance un serveur local et recharge automatiquement la page à chaque modification
 - `npm run build` : il génère un dossier `dist/` avec des fichiers optimisé prêt à être déployés. Cette étape a été utilisée par **Vercel** pour mettre le site en ligne.
 

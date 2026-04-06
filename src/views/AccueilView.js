@@ -7,7 +7,7 @@ export default class AccueilView {
 
     section.innerHTML = `
       <div class="container mt-5">
-        <h1 class='text-center text-white my-4'>Bienvenue sur Fazbear.io !</h1>
+        <h1 class='text-center text-white my-4'>Bienvenue sur Fazbear Collection !</h1>
         
         <div class="row justify-content-center mt-5">
           <div class="col-md-8 text-center text-white" style="background-color: rgba(0, 0, 0, 0.7); padding: 40px;">
