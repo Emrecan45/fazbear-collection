@@ -27,16 +27,15 @@ export default class FavoriteButton {
         let type = this.getAttribute("data-type") || "characters";
 
         // changement visuel du coeur et met a jour le localStorage
-        if (FavoritesService.isFavorite(id, type) === true) {
-          FavoritesService.removeFavorite(id, type);
-          this.classList.remove("bi-heart-fill");
-          this.classList.add("bi-heart");
-          this.style.color = "#6c757d";
-        } else {
-          FavoritesService.addFavorite(id, type);
+        let estMaintenant = FavoritesService.toggleFavorite(id, type);
+        if (estMaintenant === true) {
           this.classList.remove("bi-heart");
           this.classList.add("bi-heart-fill");
           this.style.color = "#dc3545";
+        } else {
+          this.classList.remove("bi-heart-fill");
+          this.classList.add("bi-heart");
+          this.style.color = "#6c757d";
         }
 
         // Si le filtre favoris est actif = retirer la card de la liste

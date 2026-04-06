@@ -101,11 +101,8 @@ export default class DetailCharacterView {
       etoiles[i].addEventListener("click", async function() {
         let noteChoisie = parseInt(this.getAttribute("data-value"));
         let ancienneNote = noteActuelle;
-        const updated = await CharacterProvider.updateCharacterNote(character.id, noteChoisie, ancienneNote);
-        if (updated && updated.notes !== undefined) {
-          character.notes = updated.notes;
-          character.note = character.moyenneNote();
-        }
+        await CharacterProvider.updateCharacterNote(character.id, noteChoisie, ancienneNote);
+        character.ajouterNote(noteChoisie);
         localStorage.setItem("note_perso_" + character.id, noteChoisie);
         noteActuelle = noteChoisie;
         majEtoiles(noteChoisie);
@@ -124,6 +121,11 @@ export default class DetailCharacterView {
     // Afficher le bonus d'équipement uniquement si on vient de l'inventaire
     if (origine === 'inventaire') {
       const tousLesEquipements = await EquipmentProvider.fetchEquipments();
+
+      // Charger l'équipement propre au joueur courant
+      const playerEquipmentId = await CharacterProvider.getPlayerEquipmentId(character.id);
+      character.equipmentId = playerEquipmentId;
+
       let equipementActuel = null;
       
       if (character.equipmentId !== null && character.equipmentId !== undefined) {

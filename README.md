@@ -38,7 +38,7 @@ Ce projet est une **Single Page Application (SPA)** en **JavaScript** permettant
 - Le code a une architecture MVC afin de séparer les données, les affichages et les logiques.
 - Données :
   - API : Les personnages, notes et équipements etc.. sont gérés depuis `json-server`.
-  - Local : Les favoris sont stockés en LocalStorage.
+  - Local : Les favoris et l'identifiant joueur sont stockés en LocalStorage.
 - Un routeur gère la navigation entre les vues pour respecter la contrainte du SPA.
 - Recherche + pagination sur la liste des personnages.
 - Chaque personnage peut avoir un équipement qui modifiera ses statistiques.

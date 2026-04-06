@@ -1,5 +1,6 @@
 import Character from "../models/Character.js";
 import URL_API from "../config.js";
+import PlayerService from "./PlayerService.js";
 
 export default class CharacterProvider {
 
@@ -68,9 +69,6 @@ export default class CharacterProvider {
           item.image,
           item.rarete
         );
-        if (item.equipmentId !== undefined) {
-          perso.equipmentId = item.equipmentId;
-        }
         perso.notes = item.notes;
         perso.note = perso.moyenneNote();
         listePersonnagesComplets.push(perso);
@@ -99,9 +97,6 @@ export default class CharacterProvider {
       );
       perso.notes = c.notes;
       perso.note = perso.moyenneNote();
-      if (c.equipmentId !== undefined) {
-        perso.equipmentId = c.equipmentId;
-      }
       return perso;
     } catch (err) {
       console.error("Erreur getCharacter :", err);
@@ -135,24 +130,57 @@ export default class CharacterProvider {
     return possedes;
   }
 
-  // Met à jour l'équipement d'un personnage
+  // Retourne l'equipmentId du joueur courant pour un personnage donné (null si aucun)
+  static async getPlayerEquipmentId(characterId) {
+    let playerId = PlayerService.getPlayerId();
+    let response = await fetch(`${URL_API}/playerEquipments`);
+    let liste = await response.json();
+
+    for (let i = 0; i < liste.length; i++) {
+      if (liste[i].playerId === playerId) {
+        let equipements = liste[i].equipements;
+        if (equipements !== undefined && equipements[characterId] !== undefined) {
+          return equipements[characterId];
+        }
+        return null;
+      }
+    }
+    return null;
+  }
+
+  // Met à jour l'équipement d'un personnage pour le joueur courant uniquement
   static async updateCharacterEquipment(characterId, equipmentId) {
-    // On récupère le personnage
-    const responseGet = await fetch(`${URL_API}/characters/${characterId}`);
-    const personnage = await responseGet.json();
+    let playerId = PlayerService.getPlayerId();
+    let response = await fetch(`${URL_API}/playerEquipments`);
+    let liste = await response.json();
+    let lien = null;
 
-    // On modifie l'id de l'équipement
-    personnage.equipmentId = equipmentId;
+    for (let i = 0; i < liste.length; i++) {
+      if (liste[i].playerId === playerId) {
+        lien = liste[i];
+        break;
+      }
+    }
 
-    // On écrase l'ancien personnage par le nouveau avec le nouvel équipement
-    const responsePut = await fetch(`${URL_API}/characters/${characterId}`, {
-      method: "PUT",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(personnage)
-    });
-
-    const updated = await responsePut.json();
-    return updated;
+    if (lien !== null) {
+      if (lien.equipements === undefined) {
+        lien.equipements = {};
+      }
+      lien.equipements[characterId] = equipmentId;
+      await fetch(`${URL_API}/playerEquipments/${lien.id}`, {
+        method: "PUT",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(lien)
+      });
+    } else {
+      let equipements = {};
+      equipements[characterId] = equipmentId;
+      await fetch(`${URL_API}/playerEquipments`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ playerId: playerId, equipements: equipements })
+      });
+    }
   }
 
   // Met à jour la note (remplace l'ancienne si elle existe sinon l'ajoute)
@@ -181,14 +209,4 @@ export default class CharacterProvider {
     return updated;
   }
 
-  // Remet à null l'équipement de tous les personnages au démarrage
-  static async resetEquipments() {
-    const personnages = await this.fetchCharacters();
-    for (let i = 0; i < personnages.length; i++) {
-      let p = personnages[i];
-      if (p.equipmentId !== null && p.equipmentId !== undefined) {
-        await this.updateCharacterEquipment(p.id, null);
-      }
-    }
-  }
 }
