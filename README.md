@@ -19,16 +19,14 @@ Ce projet est une **Single Page Application (SPA)** en **JavaScript** permettant
 
 ## Structure du projet
 
-- `data/`
-  - `db.json`  Base de données Json (json-server)
 - `public/`
   - `assets/`  Images et style CSS
+  - `db.json`  Catalogue statique (personnages et équipements)
 - `src/`
   - `components/`  Composants (cards, badges, barres de stats...)
   - `models/`  Classes objets (Character, Equipment...)
-  - `services/`  Providers (appels API...)
+  - `services/`  Providers, catalogue statique, i18n, localStorage...
   - `views/`  Vues de chaque page (liste, détail, boutique...)
-  - `config.js`  URL de base pour l'API
   - `index.js`  Routeur
 - `index.html`  Page HTML de base
 - `vite.config.js`  Configuration du bundler Vite
@@ -37,8 +35,10 @@ Ce projet est une **Single Page Application (SPA)** en **JavaScript** permettant
 ## Spécifications techniques
 - Le code a une architecture MVC afin de séparer les données, les affichages et les logiques.
 - Données :
-  - API : Les personnages, notes et équipements etc.. sont gérés depuis `json-server`.
-  - Local : Les favoris et l'identifiant joueur sont stockés en LocalStorage.
+  - Catalogue : les personnages et équipements sont chargés depuis un fichier statique `public/db.json`.
+  - Notes : partagées entre tous les visiteurs via **Supabase** (moyenne communautaire).
+  - Local : inventaire, équipements assignés et favoris sont stockés en LocalStorage.
+- Site bilingue (anglais par défaut, bascule FR/EN).
 - Un routeur gère la navigation entre les vues pour respecter la contrainte du SPA.
 - Recherche + pagination sur la liste des personnages.
 - Chaque personnage peut avoir un équipement qui modifiera ses statistiques.
@@ -52,29 +52,19 @@ Ce projet est une **Single Page Application (SPA)** en **JavaScript** permettant
     npm install
     ```
 
-2. Lancer le serveur de données :
-    ```bash
-    npx json-server data/db.json --port 3000
-    ```
-
-3. Générer le build :
-    ```bash
-    npm run build
-    ```
-
-4. Lancer le site :
+2. Lancer le site :
     ```bash
     npm run dev
     ```
 
-## Lancer le site (en ligne)
-Configuration du déploiement :
-- Déployé sur **[Vercel](https://vercel.com)** avec mise à jour automatique via le dépôt GitHub.
-- API json-server hébergée sur **[Render](https://render.com)**.
-- Ping constants grâce à **[UptimeRobot](https://uptimerobot.com)** pour éviter la mise en veille du serveur.
-- Site validé et indexé sur **[Google Search Console](https://search.google.com/search-console)**.
+Le catalogue est servi en statique (`public/db.json`), aucun serveur de données n'est nécessaire.
 
-**🔗 Lien du site : [https://fazbear-collection.vercel.app](https://fazbear-collection.vercel.app)**
+## Lancer le site (en ligne)
+- Front statique déployé sur **GitHub Pages** (build Vite via GitHub Actions, voir `.github/workflows/deploy.yml`).
+- Inventaire, équipements et favoris sont conservés dans le navigateur (LocalStorage).
+- Les notes sont partagées via **Supabase** (URL et clé `anon` à renseigner dans `src/config.js`).
+
+**🔗 Lien du site : [https://emrecan45.github.io/fazbear-collection/](https://emrecan45.github.io/fazbear-collection/)**
 
 ## Bundler
 
@@ -82,7 +72,7 @@ Un bundler est un outil qui prend tous les fichiers du projet (JS, CSS, images..
 
 Pour Fazbear Collection, nous avons choisi **[Vite](https://vite.dev/)** car il est rapide et simple à configurer.
 - `npm run dev` : il lance un serveur local et recharge automatiquement la page à chaque modification
-- `npm run build` : il génère un dossier `dist/` avec des fichiers optimisé prêt à être déployés. Cette étape a été utilisée par **Vercel** pour mettre le site en ligne.
+- `npm run build` : il génère un dossier `dist/` avec des fichiers optimisé prêt à être déployés. Cette étape est exécutée par **GitHub Actions** pour publier le site sur GitHub Pages.
 
 ### Fichier `vite.config.js`
 
