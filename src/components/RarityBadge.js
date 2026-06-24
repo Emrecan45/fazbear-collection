@@ -1,3 +1,5 @@
+import I18n from "../services/I18n.js";
+
 export default class RarityBadge {
 
   // Retourne la couleur Bootstrap selon la rarete
@@ -23,7 +25,7 @@ export default class RarityBadge {
     const classes = "badge bg-" + color;
     let label = "";
     if (rarete && rarete.length > 0) {
-      label = rarete;
+      label = I18n.rarete(rarete);
     }
     return '<span class="' + classes + '" style="color: black;">' + label + '</span>';
   }

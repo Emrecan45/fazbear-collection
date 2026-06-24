@@ -26,11 +26,12 @@
             </a>
           </div>
 
-          <ul class="nav fs-5 ms-auto"> 
-            <li><a id="header-home" href="#/accueil" class="nav-link px-3 text-white">Accueil</a></li>
-            <li><a id="header-catalogue" href="#/catalogue/personnages" class="nav-link px-3 text-white">Catalogue</a></li>
-            <li><a id="header-inventaire" href="#/inventaire/personnages" class="nav-link px-3 text-white">Inventaire</a></li>
-            <li><a id="header-boutique" href="#/boutique" class="nav-link px-3 text-white">Boutique</a></li>
+          <ul class="nav fs-5 ms-auto align-items-center">
+            <li><a id="header-home" href="#/accueil" class="nav-link px-3 text-white" data-i18n="nav_home">Home</a></li>
+            <li><a id="header-catalogue" href="#/catalogue/personnages" class="nav-link px-3 text-white" data-i18n="nav_catalog">Catalog</a></li>
+            <li><a id="header-inventaire" href="#/inventaire/personnages" class="nav-link px-3 text-white" data-i18n="nav_inventory">Inventory</a></li>
+            <li><a id="header-boutique" href="#/boutique" class="nav-link px-3 text-white" data-i18n="nav_shop">Shop</a></li>
+            <li class="ms-2"><button id="lang-btn" class="btn btn-outline-light btn-sm" type="button">FR</button></li>
           </ul>
         </div>
       </div>
@@ -39,7 +40,7 @@
     <main>
       <div class="py-5">
         <div class="container">
-          <div id="accueil" class="section-page">Chargement en cours...</div>
+          <div id="accueil" class="section-page"></div>
           <div id="catalogue" class="section-page"></div>
           <div id="inventaire" class="section-page"></div>
           <div id="boutique" class="section-page"></div>
@@ -49,7 +50,7 @@
     </main>
 
     <footer class="text-center mt-auto">
-      <p>Projet pédagogique à but non lucratif. Les images et descriptions proviennent du <a href="https://freddy-fazbears-pizza.fandom.com/" target="_blank" rel="noopener noreferrer">Wiki FNaF Fandom</a></p>
+      <p><span data-i18n="footer">Non-profit student project. Images and descriptions come from the</span> <a id="footer-link" href="https://freddy-fazbears-pizza.fandom.com/" target="_blank" rel="noopener noreferrer" data-i18n="footer_link">FNaF Fandom Wiki</a></p>
     </footer>
   </body>
 </html>

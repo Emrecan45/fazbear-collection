@@ -1,4 +1,5 @@
 import Utils from "./services/Utils.js";
+import I18n from "./services/I18n.js";
 import AccueilView from "./views/AccueilView.js";
 import InventaireView from "./views/InventaireView.js";
 import BoutiqueView from "./views/BoutiqueView.js";
@@ -6,8 +7,31 @@ import DetailCharacterView from "./views/DetailCharacterView.js";
 import CatalogueView from "./views/CatalogueView.js";
 let header = null;
 
+// Applique les libelles traduits aux elements statiques (nav, footer, bouton langue)
+function appliquerTraductions() {
+  let elements = document.querySelectorAll("[data-i18n]");
+  for (let i = 0; i < elements.length; i++) {
+    let cle = elements[i].getAttribute("data-i18n");
+    elements[i].textContent = I18n.t(cle);
+  }
+  let bouton = document.getElementById("lang-btn");
+  if (bouton !== null) {
+    bouton.textContent = I18n.autreLangue();
+  }
+  document.documentElement.lang = I18n.getLang();
+}
+
 // Initialisation de l'application
 async function initApp() {
+  appliquerTraductions();
+
+  let bouton = document.getElementById("lang-btn");
+  bouton.addEventListener("click", function() {
+    I18n.toggle();
+    appliquerTraductions();
+    router(); // re-render de la page courante dans la nouvelle langue
+  });
+
   router();
 }
 

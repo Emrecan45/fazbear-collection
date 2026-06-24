@@ -1,5 +1,6 @@
 import RarityBadge from "./RarityBadge.js";
 import FavoriteButton from "./FavoriteButton.js";
+import I18n from "../services/I18n.js";
 
 export default class EquipmentCard {
 
@@ -20,7 +21,7 @@ export default class EquipmentCard {
                 <h5 class="card-title mb-0">${eq.name}</h5>
               </div>
                 <p class="card-text mb-0 d-flex justify-content-between align-items-center">
-                  <span>Bonus : ${eq.bonusStat}</span>
+                  <span>${I18n.t("equip_bonus")} ${eq.bonusStat}</span>
                   ${badgeRarete}
                 </p>
               </div>
