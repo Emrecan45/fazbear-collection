@@ -8,6 +8,9 @@ import FilterService from "../services/FilterService.js";
 import Utils from "../services/Utils.js";
 import NavigationOnglet from "../components/NavigationOnglet.js";
 import FavoriteButton from "../components/FavoriteButton.js";
+import I18n from "../services/I18n.js";
+
+const IMG_VIDE = import.meta.env.BASE_URL + "assets/img/Inventaire.png";
 
 export default class InventaireView {
 
@@ -18,10 +21,10 @@ export default class InventaireView {
     let personnagesDuJoueur = await CharacterProvider.fetchPersonnagesPossedes();
     let equipementsDuJoueur = await EquipmentProvider.fetchEquipementsPossedes();
 
-    section.innerHTML = "<h1 id='inventaire-title' class='text-center text-white my-4'>Inventaire</h1>" +
+    section.innerHTML = "<h1 id='inventaire-title' class='text-center text-white my-4'>" + I18n.t("inventory_title") + "</h1>" +
       "<div class='d-flex justify-content-center mb-3' id='view-mode-tabs'>" +
-        "<a href='#/inventaire/personnages' id='tab-characters' class='btn btn-outline-light mx-1'>Animatroniques</a>" +
-        "<a href='#/inventaire/equipements' id='tab-equipment' class='btn btn-outline-light mx-1'>Équipements</a>" +
+        "<a href='#/inventaire/personnages' id='tab-characters' class='btn btn-outline-light mx-1'>" + I18n.t("tab_characters") + "</a>" +
+        "<a href='#/inventaire/equipements' id='tab-equipment' class='btn btn-outline-light mx-1'>" + I18n.t("tab_equipment") + "</a>" +
       "</div>" +
       SearchBar.getHtml() +
       "<div id='content-area' class='mt-4'></div>";
@@ -30,8 +33,8 @@ export default class InventaireView {
 
     // Si l'inventaire est vide= affiche un message et une image
     if (mode === 'personnages' && personnagesDuJoueur.length === 0) {
-      contentArea.innerHTML = "<p class='text-center text-white'>Votre inventaire d'animatroniques est vide, allez visiter la boutique !</p>" +
-        "<img src='/assets/img/Inventaire.png' alt='Inventaire vide' style='height: 450px; display: block; margin: 0 auto;'>";
+      contentArea.innerHTML = "<p class='text-center text-white'>" + I18n.t("inv_empty_chars") + "</p>" +
+        "<img src='" + IMG_VIDE + "' alt='Inventaire vide' style='height: 450px; display: block; margin: 0 auto;'>";
       NavigationOnglet.gererOngletsActifs(mode);
       NavigationOnglet.setNoteFilter(mode);
       FilterService.setMode(mode);
@@ -40,8 +43,8 @@ export default class InventaireView {
     }
 
     if (mode === 'equipements' && equipementsDuJoueur.length === 0) {
-      contentArea.innerHTML = "<p class='text-center text-white'>Votre inventaire d'équipements est vide, allez visiter la boutique !</p>" +
-        "<img src='/assets/img/Inventaire.png' alt='Inventaire vide' style='height: 450px; display: block; margin: 0 auto;'>";
+      contentArea.innerHTML = "<p class='text-center text-white'>" + I18n.t("inv_empty_equip") + "</p>" +
+        "<img src='" + IMG_VIDE + "' alt='Inventaire vide' style='height: 450px; display: block; margin: 0 auto;'>";
       NavigationOnglet.gererOngletsActifs(mode);
       NavigationOnglet.setNoteFilter(mode);
       FilterService.setMode(mode);

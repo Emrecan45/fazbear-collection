@@ -3,6 +3,7 @@ import EquipmentProvider from "../services/EquipmentProvider.js";
 import GachaService from "../services/GachaService.js";
 import CharacterCard from "../components/CharacterCard.js";
 import EquipmentCard from "../components/EquipmentCard.js";
+import I18n from "../services/I18n.js";
 
 export default class BoutiqueView {
 
@@ -13,10 +14,10 @@ export default class BoutiqueView {
 
     const section = document.getElementById("boutique");
     section.innerHTML = `
-      <h1 class='text-center text-white my-4'>Boutique</h1>
+      <h1 class='text-center text-white my-4'>${I18n.t("shop_title")}</h1>
       <div class='d-flex justify-content-center mb-3'>
-        <button id='btn-invoquer-personnage' class='btn btn-outline-light btn-lg mx-2'>Invoquer un Animatronique</button>
-        <button id='btn-invoquer-equipement' class='btn btn-outline-light btn-lg mx-2'>Invoquer un Équipement</button>
+        <button id='btn-invoquer-personnage' class='btn btn-outline-light btn-lg mx-2'>${I18n.t("shop_summon_char")}</button>
+        <button id='btn-invoquer-equipement' class='btn btn-outline-light btn-lg mx-2'>${I18n.t("shop_summon_equip")}</button>
       </div>
       <div id='result-container' class='mt-4'></div>
     `;

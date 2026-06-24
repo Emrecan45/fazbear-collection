@@ -8,6 +8,7 @@ import FilterService from "../services/FilterService.js";
 import Utils from "../services/Utils.js";
 import NavigationOnglet from "../components/NavigationOnglet.js";
 import FavoriteButton from "../components/FavoriteButton.js";
+import I18n from "../services/I18n.js";
 
 export default class CatalogueView {
 
@@ -18,10 +19,10 @@ export default class CatalogueView {
     let personnages = await CharacterProvider.fetchCharacters();
     let equipements = await EquipmentProvider.fetchEquipments();
 
-    section.innerHTML = "<h1 id='catalogue-title' class='text-center text-white my-4'>Catalogue</h1>" +
+    section.innerHTML = "<h1 id='catalogue-title' class='text-center text-white my-4'>" + I18n.t("catalog_title") + "</h1>" +
       "<div class='d-flex justify-content-center mb-3' id='view-mode-tabs'>" +
-        "<a href='#/catalogue/personnages' id='tab-characters' class='btn btn-outline-light mx-1'>Animatroniques</a>" +
-        "<a href='#/catalogue/equipements' id='tab-equipment' class='btn btn-outline-light mx-1'>Équipements</a>" +
+        "<a href='#/catalogue/personnages' id='tab-characters' class='btn btn-outline-light mx-1'>" + I18n.t("tab_characters") + "</a>" +
+        "<a href='#/catalogue/equipements' id='tab-equipment' class='btn btn-outline-light mx-1'>" + I18n.t("tab_equipment") + "</a>" +
       "</div>" +
       SearchBar.getHtml() +
       "<div id='characters-list'></div><div id='pagination'></div>";

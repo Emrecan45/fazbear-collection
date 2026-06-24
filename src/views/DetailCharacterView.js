@@ -4,6 +4,7 @@ import Utils from "../services/Utils.js";
 import RarityBadge from "../components/RarityBadge.js";
 import StatBar from "../components/StatBar.js";
 import EquipmentCard from "../components/EquipmentCard.js";
+import I18n from "../services/I18n.js";
 
 export default class DetailCharacterView {
 
@@ -27,14 +28,14 @@ export default class DetailCharacterView {
 
     section.innerHTML = `
       <div class="position-relative">
-        <button id="back-btn" class="btn btn-outline-light position-absolute" style="top: 50px; left: 15px;">Retour</button>
+        <button id="back-btn" class="btn btn-outline-light position-absolute" style="top: 50px; left: 15px;">${I18n.t("detail_back")}</button>
         <div class="row">
           <div class="col-md-5 text-center" style="padding-left: 100px;">
             <h1 class="text-white my-5">${character.name}</h1>
             <img src="${character.image}" alt="${character.name}" style="max-height: 400px; max-width: 100%;">
             
             <div class="mt-3">
-              <div class="fs-5 text-white">Notez cet animatronique</div>
+              <div class="fs-5 text-white">${I18n.t("detail_rate")}</div>
                 <div class="text-warning" style="font-size: 3rem;">
                   <span class="star" data-value="1" style="cursor: pointer;">☆</span>
                   <span class="star" data-value="2" style="cursor: pointer;">☆</span>
@@ -55,12 +56,12 @@ export default class DetailCharacterView {
             <p class="fs-5 mb-4">${character.description}</p>
             
             <div class="d-flex align-items-center mb-4">
-              <span class="fs-5 me-3">Rareté :</span>
+              <span class="fs-5 me-3">${I18n.t("detail_rarity")}</span>
               <h3 class="mb-0">${RarityBadge.getHtml(character.rarete)}</h3>
             </div>
-            ${StatBar.getHtml('force', 'Force', character.stats.force, 'red')}
-            ${StatBar.getHtml('agilite', 'Agilité', character.stats.agilite, 'green')}
-            ${StatBar.getHtml('intelligence', 'Intelligence', character.stats.intelligence, 'blue')}
+            ${StatBar.getHtml('force', I18n.t('stat_force'), character.stats.force, 'red')}
+            ${StatBar.getHtml('agilite', I18n.t('stat_agilite'), character.stats.agilite, 'green')}
+            ${StatBar.getHtml('intelligence', I18n.t('stat_intelligence'), character.stats.intelligence, 'blue')}
             <div id="champ-equipmnt"></div>
           </div>
         </div>
@@ -77,7 +78,7 @@ export default class DetailCharacterView {
     // Met à jour l'affichage de la moyenne
     function majMoyenne() {
       moyenneEtoiles.textContent = moyenne;
-      moyenneTexte.textContent = "(" + nombreNotes + " avis)";
+      moyenneTexte.textContent = "(" + nombreNotes + " " + I18n.t("reviews") + ")";
     }
     majMoyenne();
 
@@ -100,14 +101,13 @@ export default class DetailCharacterView {
     for (let i = 0; i < etoiles.length; i++) {
       etoiles[i].addEventListener("click", async function() {
         let noteChoisie = parseInt(this.getAttribute("data-value"));
-        let ancienneNote = noteActuelle;
         noteActuelle = noteChoisie;
-        await CharacterProvider.updateCharacterNote(character.id, noteChoisie, ancienneNote);
-        character.ajouterNote(noteChoisie, ancienneNote);
-        localStorage.setItem("note_perso_" + character.id, noteChoisie);
         majEtoiles(noteChoisie);
-        nombreNotes = character.nombreNotes();
-        moyenne = character.note;
+        const stat = await CharacterProvider.updateCharacterNote(character.id, noteChoisie);
+        character.note = stat.moyenne;
+        character.nombre = stat.nombre;
+        nombreNotes = stat.nombre;
+        moyenne = stat.moyenne;
         majMoyenne();
       });
     }
@@ -154,8 +154,8 @@ export default class DetailCharacterView {
     const conteneur = document.createElement("div");
 
     const etiquette = document.createElement("label");
-    etiquette.className = "text-white fs-5 mb-2 me-2"; 
-    etiquette.textContent = "Équipement :";
+    etiquette.className = "text-white fs-5 mb-2 me-2";
+    etiquette.textContent = I18n.t("detail_equipment_label");
     conteneur.appendChild(etiquette);
 
     const menuDeroulant = document.createElement("select");
@@ -164,7 +164,7 @@ export default class DetailCharacterView {
 
     const optionAucun = document.createElement("option");
     optionAucun.value = "";
-    optionAucun.textContent = "Aucun";
+    optionAucun.textContent = I18n.t("detail_none");
     menuDeroulant.appendChild(optionAucun);
 
     for (let i = 0; i < equipementsDisponibles.length; i++) {
@@ -258,11 +258,11 @@ export default class DetailCharacterView {
             // Rendu du texte
             let nomPropre = "";
             if (stat === "force") {
-                nomPropre = "Force";
+                nomPropre = I18n.t("stat_force");
             } else if (stat === "agilite") {
-                nomPropre = "Agilité";
+                nomPropre = I18n.t("stat_agilite");
             } else if (stat === "intelligence") {
-                nomPropre = "Intelligence";
+                nomPropre = I18n.t("stat_intelligence");
             }
             label.textContent = `${nomPropre} : ${baseVal}`;
 

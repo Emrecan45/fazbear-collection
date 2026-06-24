@@ -1,5 +1,6 @@
 import RarityBadge from "./RarityBadge.js";
 import FavoriteButton from "./FavoriteButton.js";
+import I18n from "../services/I18n.js";
 
 export default class CharacterCard {
 
@@ -7,14 +8,11 @@ export default class CharacterCard {
   static getHtml(character, boutonFavori = true, origine) {
     let blocNote = "";
     let note = character.note;
-    let nombreNotes = 0;
-    if (character.notes && character.notes.length) {
-      nombreNotes = character.notes.length;
-    }
+    let nombreNotes = character.nombre || 0;
 
     // Affiche la note uniquement si elle existe et qu'il y a au moins un avis
     if (typeof note !== "undefined" && note > 0 && nombreNotes > 0) {
-      blocNote = "<span class='text-warning'>★</span> <strong>" + note + "</strong> <span class='text-secondary'>(" + nombreNotes + " avis)</span>";
+      blocNote = "<span class='text-warning'>★</span> <strong>" + note + "</strong> <span class='text-secondary'>(" + nombreNotes + " " + I18n.t("reviews") + ")</span>";
     }
 
     // mettre le coeur de favoris seulement si boutonFavori est true
@@ -51,7 +49,7 @@ export default class CharacterCard {
               
               <div class="d-flex justify-content-between align-items-end">
                 <div>${blocNote}</div>
-                <a href="${href}" class="btn btn-sm btn-outline-light">Détails</a>
+                <a href="${href}" class="btn btn-sm btn-outline-light">${I18n.t("card_details")}</a>
               </div>
             </div>
         </div>

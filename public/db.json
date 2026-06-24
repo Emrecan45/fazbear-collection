@@ -824,7 +824,5 @@
       "bonusStat": "+10 force",
       "rarete": "Commun"
     }
-  ],
-  "playerEquipments": [],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }

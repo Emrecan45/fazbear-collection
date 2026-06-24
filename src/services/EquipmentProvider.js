@@ -1,13 +1,12 @@
 import Equipment from "../models/Equipment.js";
-import URL_API from "../config.js";
+import Catalog from "./Catalog.js";
 
 export default class EquipmentProvider {
 
-  // Récupère tous les équipements depuis l'API et les convertit en objets Equipment
+  // Récupère tous les équipements du catalogue et les convertit en objets Equipment
   static async fetchEquipments() {
     try {
-      const response = await fetch(`${URL_API}/equipment`);
-      const json = await response.json();
+      const json = await Catalog.getEquipment();
 
       const tableauObjets = [];
       for (let i = 0; i < json.length; i++) {
