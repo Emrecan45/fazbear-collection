@@ -1,5 +1,6 @@
 import Equipment from "../models/Equipment.js";
 import Catalog from "./Catalog.js";
+import I18n from "./I18n.js";
 
 export default class EquipmentProvider {
 
@@ -7,13 +8,15 @@ export default class EquipmentProvider {
   static async fetchEquipments() {
     try {
       const json = await Catalog.getEquipment();
+      const enAnglais = I18n.getLang() === "en";
 
       const tableauObjets = [];
       for (let i = 0; i < json.length; i++) {
         const item = json[i];
+        const nom = (enAnglais && item.name_en) ? item.name_en : item.name;
         const nouvelEquipement = new Equipment(
           item.id,
-          item.name,
+          nom,
           item.bonusStat,
           item.rarete,
         );

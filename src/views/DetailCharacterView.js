@@ -30,7 +30,7 @@ export default class DetailCharacterView {
       <div class="position-relative">
         <button id="back-btn" class="btn btn-outline-light position-absolute" style="top: 50px; left: 15px;">${I18n.t("detail_back")}</button>
         <div class="row">
-          <div class="col-md-5 text-center" style="padding-left: 100px;">
+          <div class="col-md-5 text-center detail-img-col">
             <h1 class="text-white my-5">${character.name}</h1>
             <img src="${character.image}" alt="${character.name}" style="max-height: 400px; max-width: 100%;">
             

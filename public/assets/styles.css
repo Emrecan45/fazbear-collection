@@ -1,9 +1,18 @@
 .pagination-invisible {
   visibility: hidden;
 }
+html { overflow-x: hidden; }
+
 body {
   background-color: #000;
   color: #fff;
+  overflow-x: hidden;
+}
+
+.accueil-carte {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 10px;
 }
 
 .boutique {
@@ -129,6 +138,48 @@ body {
   opacity: 1; 
 }
 
-.card-invoc.active .info { 
-  opacity: 1; 
+.card-invoc.active .info {
+  opacity: 1;
+}
+
+.detail-img-col { padding-left: 100px; }
+
+@media (max-width: 991.98px) {
+  .detail-img-col { padding-left: 0 !important; }
+}
+
+@media (max-width: 767.98px) {
+  .site-header { height: auto; padding: 10px 0; }
+  .site-header .container {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 6px;
+  }
+  .logo { height: 52px; }
+  .site-header h1 { font-size: 1.5rem; }
+  header .nav {
+    width: 100%;
+    margin-left: 0 !important;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1.05rem !important;
+  }
+  header .nav .nav-link { padding: 4px 11px !important; }
+  #personnage h1, #catalogue h1, #inventaire h1, #boutique h1 { font-size: 1.7rem; }
+  #personnage h3 { font-size: 1.25rem; }
+  #boutique .btn-lg { font-size: 1rem; padding: 8px 14px; }
+  .accueil-carte { padding: 20px; }
+  #accueil h1 { font-size: 1.3rem; overflow-wrap: anywhere; }
+  #accueil p { overflow-wrap: anywhere; }
+  #accueil .fs-4 { font-size: 1.05rem !important; }
+  #accueil .fs-5 { font-size: 0.96rem !important; }
+  #accueil h4 { font-size: 1.15rem; }
+}
+
+@media (max-width: 480px) {
+  .logo { height: 44px; }
+  .site-header h1 { font-size: 1.25rem; }
+  header .nav { font-size: 0.95rem !important; }
+  header .nav .nav-link { padding: 3px 8px !important; }
+  #back-btn { position: static !important; display: inline-block; margin-bottom: 10px; }
 }

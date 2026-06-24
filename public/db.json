@@ -13,7 +13,9 @@
       "description": "Une version détériorée de Springtrap, rongée et animée par une présence malveillante.",
       "note": 0,
       "image": "/assets/img/BlightedSpringtrap.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Corrupted Suit",
+      "description_en": "A deteriorated version of Springtrap, eaten away and animated by a malevolent presence."
     },
     {
       "id": "2",
@@ -28,7 +30,9 @@
       "description": "Le lapin guitariste du groupe : mystérieux le jour, agressif la nuit.",
       "note": 0,
       "image": "/assets/img/Bonnie.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Animatronic Guitarist",
+      "description_en": "The band's guitarist rabbit: mysterious by day, aggressive at night."
     },
     {
       "id": "3",
@@ -43,7 +47,9 @@
       "description": "Animatronique poule connue pour son amour de la nourriture et son compagnon cupcake.",
       "note": 0,
       "image": "/assets/img/Chica.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Singer / Pizza Lover",
+      "description_en": "A chicken animatronic known for her love of food and her cupcake companion."
     },
     {
       "id": "4",
@@ -58,7 +64,9 @@
       "description": "Une variante de Springtrap perpétuellement embrasée, terrifiante et implacable.",
       "note": 0,
       "image": "/assets/img/FlamingSpringtrap.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Blazing Incarnation",
+      "description_en": "A perpetually ablaze variant of Springtrap, terrifying and relentless."
     },
     {
       "id": "5",
@@ -73,7 +81,9 @@
       "description": "Petit animatronique vif et espiègle, conçu comme une attraction enfantine.",
       "note": 0,
       "image": "/assets/img/FoamBee.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Toy Bee",
+      "description_en": "A small, lively and mischievous animatronic, designed as a children's attraction."
     },
     {
       "id": "6",
@@ -88,7 +98,9 @@
       "description": "Une mascotte théâtrale, exubérante et aux réactions imprévisibles la nuit.",
       "note": 0,
       "image": "/assets/img/FoamSharpay.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Foam Diva",
+      "description_en": "A theatrical mascot, exuberant and with unpredictable reactions at night."
     },
     {
       "id": "7",
@@ -103,7 +115,9 @@
       "description": "Le leader du groupe, calculateur et souvent associé à l'esprit d'un enfant disparu.",
       "note": 0,
       "image": "/assets/img/Freddy.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Lead Mascot",
+      "description_en": "The band's leader, calculating and often linked to the spirit of a missing child."
     },
     {
       "id": "8",
@@ -118,7 +132,9 @@
       "description": "Une variante glacée de Freddy, figée mais dangereuse lorsqu'elle reprend vie.",
       "note": 0,
       "image": "/assets/img/FrozenFreddy.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Frozen Edition",
+      "description_en": "An icy variant of Freddy, frozen still but dangerous when it comes back to life."
     },
     {
       "id": "9",
@@ -133,7 +149,9 @@
       "description": "Un animatronique en pièces, reconstruit et instable, célèbre pour son apparence mutilée.",
       "note": 0,
       "image": "/assets/img/Mangle.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Dismantled Amalgam",
+      "description_en": "An animatronic in pieces, rebuilt and unstable, famous for its mangled appearance."
     },
     {
       "id": "10",
@@ -148,7 +166,9 @@
       "description": "Une présence énigmatique et cosmique, difficile à cerner et étudiée par les fans.",
       "note": 0,
       "image": "/assets/img/OPEntity.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Anonymous Entity",
+      "description_en": "An enigmatic, cosmic presence, hard to pin down and studied by fans."
     },
     {
       "id": "11",
@@ -163,7 +183,9 @@
       "description": "Version en peluche plus douce de Chica : trompeuse par son aspect innocent.",
       "note": 0,
       "image": "/assets/img/PlushChica.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Friendly Plush",
+      "description_en": "A softer plush version of Chica: deceptive behind its innocent look."
     },
     {
       "id": "12",
@@ -178,7 +200,9 @@
       "description": "Une version peluche de Foxy, espiègle et parfois agressive selon la légende.",
       "note": 0,
       "image": "/assets/img/PlushFoxy.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Pirate Plush",
+      "description_en": "A plush version of Foxy, mischievous and sometimes aggressive according to legend."
     },
     {
       "id": "13",
@@ -193,7 +217,9 @@
       "description": "Réplique en peluche de Freddy, souvent utilisée comme mascotte douce mais troublante.",
       "note": 0,
       "image": "/assets/img/PlushFreddy.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Leader Plush",
+      "description_en": "A plush replica of Freddy, often used as a cute but unsettling mascot."
     },
     {
       "id": "14",
@@ -208,7 +234,9 @@
       "description": "Une version Funtime en peluche, mélange d'innocence et de bizarrerie.",
       "note": 0,
       "image": "/assets/img/PlushFuntimeFreddy.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Prankster Plush",
+      "description_en": "A plush Funtime version, a mix of innocence and weirdness."
     },
     {
       "id": "15",
@@ -223,7 +251,9 @@
       "description": "Foxy déguisé en ringmaster, charismatique et dangereux sur scène.",
       "note": 0,
       "image": "/assets/img/RingmasterFoxy.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Ringmaster",
+      "description_en": "Foxy dressed as a ringmaster, charismatic and dangerous on stage."
     },
     {
       "id": "16",
@@ -238,7 +268,9 @@
       "description": "Une déclinaison de Mangle avec des éléments serpentins, imprévisible et rapide.",
       "note": 0,
       "image": "/assets/img/SerpentMangle.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Serpentine Variation",
+      "description_en": "A variation of Mangle with serpentine features, unpredictable and fast."
     },
     {
       "id": "17",
@@ -253,7 +285,9 @@
       "description": "Personnage flamboyant et théâtral, conçu pour attirer l'attention.",
       "note": 0,
       "image": "/assets/img/Sharpay.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Glamour Diva",
+      "description_en": "A flamboyant and theatrical character, built to draw attention."
     },
     {
       "id": "18",
@@ -268,7 +302,9 @@
       "description": "Ancienne version liée aux origines des springlocks, mystérieuse et dangereuse.",
       "note": 0,
       "image": "/assets/img/SpringBonnie.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Predecessor",
+      "description_en": "An old version tied to the origins of the springlocks, mysterious and dangerous."
     },
     {
       "id": "19",
@@ -283,7 +319,9 @@
       "description": "Le costume qui abrite l'un des antagonistes humains les plus sinistres.",
       "note": 0,
       "image": "/assets/img/Springtrap.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Host of the Past",
+      "description_en": "The suit that houses one of the most sinister human antagonists."
     },
     {
       "id": "20",
@@ -298,7 +336,9 @@
       "description": "Petit personnage d'appoint, souvent utilisé dans les décors et spectacles.",
       "note": 0,
       "image": "/assets/img/SwingBee.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Musical Bee",
+      "description_en": "A small supporting character, often used in sets and shows."
     },
     {
       "id": "21",
@@ -313,7 +353,9 @@
       "description": "Version modernisée et plus lisse de Bonnie, conçue pour les enfants.",
       "note": 0,
       "image": "/assets/img/ToyBonnie.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Bonnie (Toy Reissue)",
+      "description_en": "A modernized, sleeker version of Bonnie, designed for children."
     },
     {
       "id": "22",
@@ -328,7 +370,9 @@
       "description": "Une version abîmée et inquiétante de Bonnie, laissée en pièces.",
       "note": 0,
       "image": "/assets/img/WitheredBonnie.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Withered Bonnie",
+      "description_en": "A damaged, disturbing version of Bonnie, left in pieces."
     },
     {
       "id": "23",
@@ -343,7 +387,9 @@
       "description": "Chica en mauvais état, réputée pour son apparence inquiétante et son compagnon cupcake.",
       "note": 0,
       "image": "/assets/img/WitheredChica.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Damaged Chica",
+      "description_en": "Chica in poor condition, known for her unsettling appearance and her cupcake companion."
     },
     {
       "id": "24",
@@ -358,7 +404,9 @@
       "description": "Une réinterprétation forestière de Freddy, plus rustique mais menaçante.",
       "note": 0,
       "image": "/assets/img/WoodlandFreddy.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Woodland Freddy",
+      "description_en": "A woodland reinterpretation of Freddy, more rustic but menacing."
     },
     {
       "id": "25",
@@ -373,7 +421,9 @@
       "description": "Une version cauchemardesque et monstrueuse de Bonnie aux dents acérées.",
       "note": 0,
       "image": "/assets/img/NightmareBonnie.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Nocturnal Terror",
+      "description_en": "A nightmarish, monstrous version of Bonnie with razor-sharp teeth."
     },
     {
       "id": "26",
@@ -388,7 +438,9 @@
       "description": "Une illusion monstrueuse de Chica accompagnée de son sinistre cupcake.",
       "note": 0,
       "image": "/assets/img/NightmareChica.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Famished Nightmare",
+      "description_en": "A monstrous illusion of Chica accompanied by her sinister cupcake."
     },
     {
       "id": "27",
@@ -403,7 +455,9 @@
       "description": "L'animatronique exclu de la crique des pirates, célèbre pour sa vitesse foudroyante.",
       "note": 0,
       "image": "/assets/img/Foxy.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Pirate Fox",
+      "description_en": "The outcast animatronic of Pirate Cove, famous for his lightning speed."
     },
     {
       "id": "28",
@@ -418,7 +472,9 @@
       "description": "Une version en plastique brillant de Freddy, conçue avec la reconnaissance faciale.",
       "note": 0,
       "image": "/assets/img/ToyFreddy.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Next-Gen Mascot",
+      "description_en": "A glossy plastic version of Freddy, built with facial recognition."
     },
     {
       "id": "29",
@@ -433,7 +489,9 @@
       "description": "La nouvelle Chica, souvent vue sans son bec dans les couloirs obscurs.",
       "note": 0,
       "image": "/assets/img/ToyChica.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Toy Singer",
+      "description_en": "The new Chica, often seen without her beak in the dark hallways."
     },
     {
       "id": "30",
@@ -448,7 +506,9 @@
       "description": "Un assemblage complexe et conscient de tous les animatroniques Funtime.",
       "note": 0,
       "image": "/assets/img/Ennard.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Metallic Amalgam",
+      "description_en": "A complex, sentient assembly of all the Funtime animatronics."
     },
     {
       "id": "31",
@@ -463,7 +523,9 @@
       "description": "Une animatronique gracieuse, guidée par le son de sa propre boîte à musique.",
       "note": 0,
       "image": "/assets/img/Ballora.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Prima Ballerina",
+      "description_en": "A graceful animatronic, guided by the sound of her own music box."
     },
     {
       "id": "32",
@@ -478,7 +540,9 @@
       "description": "Baby, reconstruite à partir de pièces de récupération et animée par une volonté de fer.",
       "note": 0,
       "image": "/assets/img/ScrapCircusBaby.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Deranged Offspring",
+      "description_en": "Baby, rebuilt from salvaged parts and driven by an iron will."
     },
     {
       "id": "33",
@@ -493,7 +557,9 @@
       "description": "La star incontestée du Circus Baby's Pizza World, dotée d'une intelligence redoutable.",
       "note": 0,
       "image": "/assets/img/CircusBaby.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Lead Singer",
+      "description_en": "The undisputed star of Circus Baby's Pizza World, with a formidable intellect."
     },
     {
       "id": "34",
@@ -508,7 +574,9 @@
       "description": "Un enchevêtrement cauchemardesque de câbles, de métal et de dents.",
       "note": 0,
       "image": "/assets/img/NightmareMangle.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Hanging Horror",
+      "description_en": "A nightmarish tangle of cables, metal and teeth."
     },
     {
       "id": "35",
@@ -523,7 +591,9 @@
       "description": "Un Freddy terrifiant, toujours accompagné de ses sbires, les Freddles.",
       "note": 0,
       "image": "/assets/img/NightmareFreddy.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Monster Under the Bed",
+      "description_en": "A terrifying Freddy, always accompanied by his minions, the Freddles."
     },
     {
       "id": "36",
@@ -538,7 +608,9 @@
       "description": "Un imposant animatronique à cymbales, extrêmement sensible aux bruits forts.",
       "note": 0,
       "image": "/assets/img/MusicMan.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Keeper of Sound",
+      "description_en": "An imposing cymbal-playing animatronic, extremely sensitive to loud noises."
     },
     {
       "id": "37",
@@ -553,7 +625,9 @@
       "description": "Un petit garçon en plastique rieur, spécialisé dans le vol de piles de lampe torche.",
       "note": 0,
       "image": "/assets/img/BalloonBoy.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Balloon Vendor",
+      "description_en": "A laughing little plastic boy, specialized in stealing flashlight batteries."
     },
     {
       "id": "38",
@@ -568,7 +642,9 @@
       "description": "Un ours noir mystérieux, conçu spécifiquement pour capturer une entité bien précise.",
       "note": 0,
       "image": "/assets/img/Lefty.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "L.E.F.T.E.",
+      "description_en": "A mysterious black bear, designed specifically to capture one particular entity."
     },
     {
       "id": "39",
@@ -583,7 +659,9 @@
       "description": "Un éléphant magicien qui adore raconter des histoires interminables.",
       "note": 0,
       "image": "/assets/img/OrvilleElephant.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Mediocre Magician",
+      "description_en": "A magician elephant who loves telling endless stories."
     },
     {
       "id": "40",
@@ -598,7 +676,9 @@
       "description": "Une hallucination dorée, dotée de capacités surnaturelles inexplicables.",
       "note": 0,
       "image": "/assets/img/GoldenFreddy.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Ghostly Apparition",
+      "description_en": "A golden hallucination, endowed with inexplicable supernatural powers."
     },
     {
       "id": "41",
@@ -613,7 +693,9 @@
       "description": "Le fantôme calciné de Balloon Boy, déclenchant des erreurs systèmes s'il est observé.",
       "note": 0,
       "image": "/assets/img/PhantomBalloonBoy.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Toxic Hallucination",
+      "description_en": "The charred ghost of Balloon Boy, triggering system errors if observed."
     },
     {
       "id": "42",
@@ -628,7 +710,9 @@
       "description": "Un vieil hippopotame violet qui adore partager de longues anecdotes décousues avec son ami Orville.",
       "note": 0,
       "image": "/assets/img/MrHippo.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Chatty Storyteller",
+      "description_en": "An old purple hippo who loves sharing long, rambling anecdotes with his friend Orville."
     },
     {
       "id": "43",
@@ -643,7 +727,9 @@
       "description": "Une version affreuse de Foxy avec une longue langue métallique et des crocs acérés.",
       "note": 0,
       "image": "/assets/img/NightmareFoxy.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Fox in the Closet",
+      "description_en": "A hideous version of Foxy with a long metallic tongue and sharp fangs."
     },
     {
       "id": "44",
@@ -658,7 +744,9 @@
       "description": "La marionnette insaisissable qui a donné la vie aux autres pour qu'ils obtiennent vengeance.",
       "note": 0,
       "image": "/assets/img/Puppet.jpg",
-      "notes": []
+      "notes": [],
+      "title_en": "Protector of Souls",
+      "description_en": "The elusive puppet that gave life to the others so they could take their revenge."
     }
   ],
   "equipment": [
@@ -666,163 +754,190 @@
       "id": "1",
       "name": "Mécanisme Springlock Instable",
       "bonusStat": "+35 force",
-      "rarete": "Légendaire"
+      "rarete": "Légendaire",
+      "name_en": "Unstable Springlock Mechanism"
     },
     {
       "id": "2",
       "name": "Endosquelette en Titane",
       "bonusStat": "+40 force",
-      "rarete": "Mythique"
+      "rarete": "Mythique",
+      "name_en": "Titanium Endoskeleton"
     },
     {
       "id": "3",
       "name": "Badge du Gardien de Nuit",
       "bonusStat": "+10 intelligence",
-      "rarete": "Commun"
+      "rarete": "Commun",
+      "name_en": "Night Guard Badge"
     },
     {
       "id": "4",
       "name": "Servomoteurs Révisés",
       "bonusStat": "+10 agilite",
-      "rarete": "Commun"
+      "rarete": "Commun",
+      "name_en": "Overhauled Servomotors"
     },
     {
       "id": "5",
       "name": "Disque d'Illusion Sonore",
       "bonusStat": "+50 intelligence",
-      "rarete": "Légendaire"
+      "rarete": "Légendaire",
+      "name_en": "Sound Illusion Disc"
     },
     {
       "id": "6",
       "name": "Guitare Électrique Surchargée",
       "bonusStat": "+20 agilite",
-      "rarete": "Rare"
+      "rarete": "Rare",
+      "name_en": "Overcharged Electric Guitar"
     },
     {
       "id": "7",
       "name": "Costume Ignifugé",
       "bonusStat": "+30 force",
-      "rarete": "Épique"
+      "rarete": "Épique",
+      "name_en": "Fireproof Suit"
     },
     {
       "id": "8",
       "name": "Module de Reconnaissance Faciale",
       "bonusStat": "+25 intelligence",
-      "rarete": "Rare"
+      "rarete": "Rare",
+      "name_en": "Facial Recognition Module"
     },
     {
       "id": "9",
       "name": "Boîte à Musique de la Marionnette",
       "bonusStat": "+30 agilite",
-      "rarete": "Épique"
+      "rarete": "Épique",
+      "name_en": "Puppet's Music Box"
     },
     {
       "id": "10",
       "name": "Injection de Remnant",
       "bonusStat": "+45 agilite",
-      "rarete": "Mythique"
+      "rarete": "Mythique",
+      "name_en": "Remnant Injection"
     },
     {
       "id": "11",
       "name": "Puce de Contrôle V.A.N.N.I.",
       "bonusStat": "+35 intelligence",
-      "rarete": "Légendaire"
+      "rarete": "Légendaire",
+      "name_en": "V.A.N.N.I. Control Chip"
     },
     {
       "id": "12",
       "name": "Crochet Pirate Affûté",
       "bonusStat": "+30 force",
-      "rarete": "Épique"
+      "rarete": "Épique",
+      "name_en": "Sharpened Pirate Hook"
     },
     {
       "id": "13",
       "name": "Tablette de Sécurité Piratée",
       "bonusStat": "+30 intelligence",
-      "rarete": "Épique"
+      "rarete": "Épique",
+      "name_en": "Hacked Security Tablet"
     },
     {
       "id": "14",
       "name": "Le Scooper",
       "bonusStat": "+35 force",
-      "rarete": "Épique"
+      "rarete": "Épique",
+      "name_en": "The Scooper"
     },
     {
       "id": "15",
       "name": "Batterie Extra-Capacité",
       "bonusStat": "+20 agilite",
-      "rarete": "Rare"
+      "rarete": "Rare",
+      "name_en": "Extra-Capacity Battery"
     },
     {
       "id": "16",
       "name": "Câblage Renforcé Fazbear",
       "bonusStat": "+20 force",
-      "rarete": "Rare"
+      "rarete": "Rare",
+      "name_en": "Reinforced Fazbear Wiring"
     },
     {
       "id": "17",
       "name": "Taser de Technicien",
       "bonusStat": "+25 force",
-      "rarete": "Rare"
+      "rarete": "Rare",
+      "name_en": "Technician's Taser"
     },
     {
       "id": "18",
       "name": "Masque d'Animatronique Vide",
       "bonusStat": "+20 intelligence",
-      "rarete": "Rare"
+      "rarete": "Rare",
+      "name_en": "Empty Animatronic Mask"
     },
     {
       "id": "19",
       "name": "Ventilateur de Bureau Puissant",
       "bonusStat": "+20 agilite",
-      "rarete": "Rare"
+      "rarete": "Rare",
+      "name_en": "Powerful Desk Fan"
     },
     {
       "id": "20",
       "name": "Pile AA Rechargée",
       "bonusStat": "+5 agilite",
-      "rarete": "Commun"
+      "rarete": "Commun",
+      "name_en": "Recharged AA Battery"
     },
     {
       "id": "21",
       "name": "Part de Pizza Rassise",
       "bonusStat": "+5 force",
-      "rarete": "Commun"
+      "rarete": "Commun",
+      "name_en": "Stale Pizza Slice"
     },
     {
       "id": "22",
       "name": "Peluche Freddy Usée",
       "bonusStat": "+5 intelligence",
-      "rarete": "Commun"
+      "rarete": "Commun",
+      "name_en": "Worn Freddy Plush"
     },
     {
       "id": "23",
       "name": "Vis Rouillée",
       "bonusStat": "+5 force",
-      "rarete": "Commun"
+      "rarete": "Commun",
+      "name_en": "Rusty Screw"
     },
     {
       "id": "24",
       "name": "Gobelet en Plastique Fazbear",
       "bonusStat": "+5 agilite",
-      "rarete": "Commun"
+      "rarete": "Commun",
+      "name_en": "Fazbear Plastic Cup"
     },
     {
       "id": "25",
       "name": "Lampe Torche Basique",
       "bonusStat": "+10 agilite",
-      "rarete": "Commun"
+      "rarete": "Commun",
+      "name_en": "Basic Flashlight"
     },
     {
       "id": "26",
       "name": "Ticket de la Salle d'Arcade",
       "bonusStat": "+5 intelligence",
-      "rarete": "Commun"
+      "rarete": "Commun",
+      "name_en": "Arcade Ticket"
     },
     {
       "id": "27",
       "name": "Tournevis de Maintenance",
       "bonusStat": "+10 force",
-      "rarete": "Commun"
+      "rarete": "Commun",
+      "name_en": "Maintenance Screwdriver"
     }
   ]
 }

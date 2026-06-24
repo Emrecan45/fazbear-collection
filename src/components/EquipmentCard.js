@@ -4,6 +4,18 @@ import I18n from "../services/I18n.js";
 
 export default class EquipmentCard {
 
+  // Traduit le mot de la stat dans un bonus type "+35 force"
+  static bonusLocalise(bonusStat) {
+    if (!bonusStat) {
+      return "";
+    }
+    let parties = bonusStat.split(" ");
+    if (parties.length === 2) {
+      return parties[0] + " " + I18n.t("stat_" + parties[1]);
+    }
+    return bonusStat;
+  }
+
   // Génère le HTML d'une card d'équipement
   static getHtml(eq, boutonFavori = true) {
     let badgeRarete = RarityBadge.getHtml(eq.rarete);
@@ -21,7 +33,7 @@ export default class EquipmentCard {
                 <h5 class="card-title mb-0">${eq.name}</h5>
               </div>
                 <p class="card-text mb-0 d-flex justify-content-between align-items-center">
-                  <span>${I18n.t("equip_bonus")} ${eq.bonusStat}</span>
+                  <span>${I18n.t("equip_bonus")} ${EquipmentCard.bonusLocalise(eq.bonusStat)}</span>
                   ${badgeRarete}
                 </p>
               </div>

@@ -1,6 +1,7 @@
 import Character from "../models/Character.js";
 import Catalog from "./Catalog.js";
 import RatingService from "./RatingService.js";
+import I18n from "./I18n.js";
 
 const CLE_EQUIP = "fazbear_equipements"; // { [characterId]: equipmentId } : equipement assigne (local au navigateur)
 
@@ -61,12 +62,16 @@ export default class CharacterProvider {
 
   // Construit un objet Character a partir d'une entree du catalogue + la note partagee
   static construire(item, stat) {
+    const enAnglais = I18n.getLang() === "en";
+    const titre = (enAnglais && item.title_en) ? item.title_en : item.title;
+    const description = (enAnglais && item.description_en) ? item.description_en : item.description;
+
     const perso = new Character(
       item.id,
       item.name,
-      item.title,
+      titre,
       item.stats,
-      item.description,
+      description,
       item.note,
       item.image,
       item.rarete
